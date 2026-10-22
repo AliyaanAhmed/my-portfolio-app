@@ -1,12 +1,10 @@
 export type Role = { title: string; dates: string; description: string; current?: boolean };
-export type Employer = { name: string; location: string; type: string; roles: Role[] };
+export type Employer = { name: string; period: string; focus: string; location: string; type: string; roles: Role[] };
 export const experience: Employer[] = [
-  { name: 'Datanox', location: 'Karachi, Pakistan', type: 'Employment', roles: [
-    { title: 'Power Platform Consultant — Code Apps (React/TS), Power Pages, AI & Frontend Architecture', dates: 'February 2026–Present', current: true, description: 'Focus: Power Apps Code Apps with React and TypeScript, Power Pages, AI integration, and frontend architecture.' },
-    { title: 'Microsoft Power Pages Consultant & Frontend Developer', dates: 'March 2025–April 2026', description: 'Focus: Power Pages interfaces and frontend development for enterprise applications.' },
-    { title: 'UI/UX Consultant', dates: 'August 2024–March 2025', description: 'Focus: interface design and user experience for digital products.' },
+  { name: 'Datanox Pty Ltd', period: '2024 — Present', focus: 'Enterprise applications & AI', location: 'Karachi, Pakistan', type: 'Employment', roles: [
+    { title: 'Power Apps Consultant', dates: 'August 2024–Present', current: true, description: 'Enterprise Code Apps with React, TypeScript and Vite; Power Pages and Dataverse. Frontend architecture, role-based approvals, SSO and custom APIs for government, insurance and healthcare workflows, with AI recommendations and rapid prototypes.' },
   ]},
-  { name: 'MechConnect', location: 'Remote · Frankfurt-based company', type: 'Contract', roles: [{ title: 'Frontend Developer', dates: 'March 2024–July 2024', description: 'Frontend development using React, SASS, Axios, JavaScript, and API integration.' }] },
-  { name: 'Seamless Solutions Pvt Ltd', location: 'Karachi, Pakistan', type: 'Employment', roles: [ { title: 'Frontend Developer', dates: 'October 2023–June 2024', description: 'Focus: frontend development and web interfaces.' }, { title: 'Junior Web Developer', dates: 'July 2023–October 2023', description: 'Early software development experience building web interfaces.' } ] },
-  { name: 'CNSAC', location: '', type: 'Medical company · Consulting', roles: [{ title: 'App Consultant', dates: '', description: 'Application consulting for CNSAC, a medical company.' }] },
+  { name: 'CNSAC Med', period: '2025', focus: 'Medical e-commerce & UX', location: 'Germany · Remote', type: 'Part-time consulting', roles: [{ title: 'Application Consultant', dates: 'March 2025–October 2025', description: 'User journeys and frontend design for the CNSAC-Medshop e-commerce platform. Refined the experience around accessibility and brand consistency for a medical equipment company.' }] },
+  { name: 'Mech Connect', period: '2024', focus: 'React & API integration', location: 'Frankfurt, Germany · Remote', type: 'Software engineering', roles: [{ title: 'Software Engineer', dates: 'March 2024–August 2024', description: 'Built the frontend from scratch using React, SASS, Axios and JavaScript, integrating multiple APIs into a responsive interface.' }] },
+  { name: 'Seamless Solutions Pvt Ltd', period: '2023 — 2024', focus: 'B2B & B2C applications', location: 'Karachi, Pakistan', type: 'Software engineering', roles: [{ title: 'Software Engineer', dates: 'July 2023–March 2024', description: 'Built responsive React interfaces for B2B and B2C applications, including Pakistan Gate products. Translated UI/UX designs into working screens, integrated APIs, and planned application flows.' }] },
 ];

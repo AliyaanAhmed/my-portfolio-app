@@ -23,7 +23,7 @@ No API keys, database, CMS, or external account is needed. Initial font compilat
 ## Content and design
 
 - `src/content/profile.ts`: name, positioning, biography, real links, portrait, education, and configurable site URL.
-- `src/content/experience.ts`: employer groups, editable role dates, descriptions, and current role. Supplied overlaps are intentional. CNSAC is listed as an App Consultant engagement at a medical company; dates are omitted because they have not been supplied.
+- `src/content/experience.ts`: career dates and concise responsibilities aligned to the supplied resume. Titles follow the user's requested wording: Power Apps Consultant, Application Consultant, and Software Engineer. The part-time CNSAC Med engagement overlaps Datanox intentionally. Timeline periods and focus labels come from the same employer records as the expanded details.
 - `src/content/projects.ts`: three project stories, slugs, provenance, walkthroughs, constraints, and next steps.
 - `src/content/expertise.ts`: five capability previews, led by Power Platform, Power Automate, and AI-assisted workflows.
 - `src/app/globals.css`: shared tokens, interface illustrations, case-study layouts, and responsive foundations.
