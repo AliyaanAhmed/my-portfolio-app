@@ -42,6 +42,9 @@ main { overflow: clip; }
 .platform-icon { width: 31px; height: 31px; border-radius: 50%; }
 .label-apps { top: 215px; left: -9px; }
 .label-automate { right: -5px; bottom: 95px; }
+.label-pages { top: 110px; right: -5px; }
+.label-react { bottom: 190px; left: -9px; }
+.platform-icon.react { background: #e8f4f9; }
 
 /* Capability selection: only the active row carries explanatory text. */
 .expertise-section { background: #142c27; }
@@ -182,6 +185,8 @@ main { overflow: clip; }
   .orbit-label { font-size: 10px; padding: 8px 12px 8px 8px; }
   .label-apps { top: 195px; left: -8px; }
   .label-automate { bottom: 100px; right: -10px; }
+  .label-pages { top: 100px; right: -10px; }
+  .label-react { bottom: 180px; left: -8px; }
   .expertise-explorer { gap: 45px; }
   .capability-rows button strong { font-size: 21px; }
   .project-card-art { height: 350px; }
@@ -212,6 +217,8 @@ main { overflow: clip; }
   .platform-icon { width: 26px; height: 26px; }
   .label-apps { top: 190px; left: -5px; }
   .label-automate { bottom: 70px; right: -8px; }
+  .label-pages { top: 90px; right: -8px; }
+  .label-react { bottom: 145px; left: -5px; }
   .hero-footnote > a { font-size: 9px; }
   .landing-heading h2, .refined-landing h2 { font-size: 42px; }
   .section-aside { font-size: 11px; max-width: 170px; text-align: right; }
@@ -307,6 +314,8 @@ main { overflow: clip; }
   .orbit-one { width: 265px; height: 265px; top: 65px; }
   .label-apps { top: 175px; left: 1px; }
   .label-automate { bottom: 45px; right: 0; }
+  .label-pages { top: 65px; right: 0; }
+  .label-react { bottom: 110px; left: 1px; }
   .orbit-label { font-size: 9px; padding: 8px 12px 8px 8px; }
   .platform-icon { width: 26px; height: 26px; }
   .hero-footnote { padding-block: 7px 25px; }
