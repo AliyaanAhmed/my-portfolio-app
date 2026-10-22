@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useReducedMotion } from 'motion/react';
-import { ArrowDown, ArrowUpRight, MapPin } from 'lucide-react';
+import { ArrowUpRight, MapPin } from 'lucide-react';
 import { AvatarStage } from './AvatarStage';
 import { Action } from '../ui';
 import { profile } from '@/content/profile';
@@ -18,6 +18,5 @@ export function HeroSection() {
         <div className="hero-location"><MapPin size={13} /><span>Karachi, Pakistan</span></div>
       </motion.div>
     </div><AvatarStage /></div>
-    <div className="container hero-footnote"><a href="#expertise"><span className="scroll-indicator"><ArrowDown size={15} /></span> SCROLL TO EXPLORE</a><span className="hero-signature">Aliyaan<span>↗</span></span></div>
   </section>;
 }
