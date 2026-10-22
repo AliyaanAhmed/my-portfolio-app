@@ -5,6 +5,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { AvatarStage } from './AvatarStage';
 import { Action } from '../ui';
 import { profile } from '@/content/profile';
+import { ProductLogo } from '../ui/ProductLogo';
 
 export function HeroSection() {
   const reduced = useReducedMotion();
@@ -15,6 +16,7 @@ export function HeroSection() {
       <motion.div initial={reduced ? false : { opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.25 }}>
         <p>Power Platform, React, and AI.<br />Thoughtful interfaces. Connected workflows.</p>
         <div className="hero-actions"><Action href="#work">See my work</Action><a className="text-link" href={profile.links.linkedin} target="_blank" rel="noopener noreferrer">Let’s connect <ArrowUpRight size={17} /></a></div>
+        <div className="hero-toolkit" aria-label="Core technologies"><span className="hero-toolkit-label">MY EVERYDAY TOOLKIT</span><ul>{(['Power Apps', 'Power Automate', 'Power Pages', 'React'] as const).map(name => <li key={name}><ProductLogo name={name} size={25} /><span>{name}</span></li>)}</ul></div>
       </motion.div>
     </div><AvatarStage /></div>
   </section>;

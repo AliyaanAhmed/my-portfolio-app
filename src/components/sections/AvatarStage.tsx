@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { motion, useReducedMotion, useSpring, useTransform } from 'motion/react';
 import { profile } from '@/content/profile';
-import { ProductLogo } from '../ui/ProductLogo';
 
 export function AvatarStage() {
   const stage = useRef<HTMLDivElement>(null);
@@ -40,6 +39,5 @@ export function AvatarStage() {
       <motion.div className="avatar-body" style={reduced ? { x: 0 } : { x: bodyX }} aria-hidden="true"><Image src={profile.avatar} width={1024} height={1536} alt="" priority sizes="(max-width: 600px) 300px, 400px" /></motion.div>
       <motion.div className="avatar-head" data-testid="avatar-head" style={reduced ? { rotateY: 0, rotateX: 0, rotateZ: 0 } : { rotateY, rotateX, rotateZ }} aria-hidden="true"><Image src={profile.avatar} width={1024} height={1536} alt="" priority sizes="(max-width: 600px) 300px, 400px" /></motion.div>
     </div>
-    <div className="hero-toolkit" aria-label="Core technologies"><span className="hero-toolkit-label">MY EVERYDAY TOOLKIT</span><ul>{(['Power Apps', 'Power Automate', 'Power Pages', 'React'] as const).map(name => <li key={name}><ProductLogo name={name} size={27} /><span>{name}</span></li>)}</ul></div>
   </div>;
 }
