@@ -34,8 +34,7 @@ function CapabilityDetail({ kind }: { kind: 'platform' | 'automation' | 'ai' | '
   </div>;
   return <div className={s.visual}>
     <div className={s.platformGrid}>{([{name:'Power Pages',caption:'Public-facing portals'},{name:'Power Apps',caption:'Internal business apps'},{name:'Code Apps',caption:'Custom React experiences'},{name:'React SPA',caption:'Independent web apps'}] as const).map(tool=><div key={tool.name}><ProductLogo name={tool.name} size={30} /><strong>{tool.name}</strong><span>{tool.caption}</span></div>)}</div>
-    <div className={s.dataLink}><ArrowDown size={15} /></div><div className={s.dataFoundation}><ProductLogo name="Dataverse" size={30} /><div><strong>Dataverse</strong><span>Shared data · relationships · access roles</span></div><ShieldCheck size={19} /></div>
-    <div className={s.dataLink}><ArrowDown size={15} /></div><div className={s.dataFoundation}><ProductLogo name="Power Automate" size={30} /><div><strong>Power Automate</strong><span>Trigger → approval → notification</span></div><GitBranch size={19} /></div>
+    <div className={s.dataLink}><ArrowDown size={15} /></div><div className={s.foundationRow}><div className={s.dataFoundation}><ProductLogo name="Dataverse" size={25} /><div><strong>Dataverse</strong><span>Data & access roles</span></div></div><div className={s.dataFoundation}><ProductLogo name="Power Automate" size={25} /><div><strong>Power Automate</strong><span>Approvals & notifications</span></div></div></div>
   </div>;
 }
 
