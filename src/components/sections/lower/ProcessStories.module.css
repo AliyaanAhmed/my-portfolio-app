@@ -98,4 +98,62 @@
 @media(max-width: 1100px) { .story { gap: 38px; } .scene { padding: 23px 18px; } .aiRoute > span { gap: 5px; font-size: 9px; } .aiCards { gap: 12px; } .document,.suggestion { padding: 17px 13px; } }
 @media(max-width: 799px) { .stories { gap: 58px; } .story { grid-template-columns: 1fr; gap: 27px; } .storyCopy h3 { max-width: 100%; font-size: 32px; } .storyCopy > p { max-width: 480px; font-size: 14px; margin-top: 13px; } .products { margin-top: 20px; max-width: none; } .visual { max-width: 570px; width: 100%; } .scene { padding: 28px; } }
 @media(max-width: 420px) { .storyCopy h3 { font-size: 29px; } .scene { padding: 23px 15px; min-height: 340px; } .interfaceRow { gap: 8px; } .product { padding-inline: 5px; } .product strong { font-size: 10px; } .product small { font-size: 7px; } .product img { width: 29px; height: 29px; } .foundation { grid-template-columns: 1fr 26px 1fr; } .aiRoute { gap: 6px; } .aiRoute > span { flex-direction: column; gap: 6px; font-size: 9px; } .aiRoute > i { flex: 0 1 25px; } .aiCards { gap: 10px; } .document,.suggestion { padding: 15px 11px; min-height: 215px; } .suggestion strong { font-size: 12px; } .caption { font-size: 11px; padding-inline: 16px; gap: 9px; } .progress { gap: 3px; } .progress > span { width: 9px; } .sceneNote { font-size: 9px; } }
+@media(max-width: 599px) {
+  .stories { gap: 42px; }
+  .story { gap: 20px; align-items: start; }
+  .chapter { font-size: 10px; letter-spacing: .08em; }
+  .storyCopy h3 { font-size: clamp(26px,7vw,32px); margin-top: 13px; line-height: 1.25; }
+  .storyCopy > p { font-size: 14px; line-height: 1.7; margin-top: 12px; }
+  .tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 17px; }
+  .tools > div { gap: 7px; padding: 8px 10px; background: #eef3e9; border: 1px solid #e0e8da; border-radius: 6px; min-width: 0; }
+  .tools > div > img { width: 18px; height: 18px; }
+  .tools strong { font-size: 11px; line-height: 1.5; color: #48614f; }
+  .tools small { display: none; }
+  .visual { border-radius: 13px; box-shadow: none; }
+  .visualHeader { padding: 8px 14px; }
+  .visualHeader > span { font-size: 9px; letter-spacing: .06em; }
+  .scene { padding: 20px 14px; min-height: 0; }
+  .interfaceRow { gap: 7px; }
+  .product { gap: 10px; padding: 15px 5px; border-radius: 8px; }
+  .product strong { font-size: 11px; line-height: 1.5; text-align: center; white-space: normal; }
+  .product small { display: none; }
+  .product img { width: 29px; height: 29px; }
+  .bus { height: 25px; }
+  .foundation { grid-template-columns: minmax(0,1fr) 24px minmax(0,1fr); margin-top: 16px; }
+  .foundation .product { flex-direction: row; justify-content: center; gap: 7px; padding: 13px 7px; }
+  .foundation .product img { width: 23px; height: 23px; }
+  .architectureLogic { display: none; }
+  .outcome { font-size: 11px; line-height: 1.6; margin-top: 18px; text-align: center; gap: 6px; }
+  .outcome svg { flex-shrink: 0; }
+  .caption { padding: 14px; gap: 9px; font-size: 12px; line-height: 1.5; min-height: 51px; }
+  .progress { gap: 3px; flex-shrink: 0; }
+  .progress > span { width: 8px; }
+  .aiRoute { margin-bottom: 18px; gap: 7px; }
+  .aiRoute > span { flex-direction: column; gap: 8px; font-size: 10px; text-align: center; }
+  .aiRoute > i { flex: 1; }
+  .intelligence { padding: 12px; margin-bottom: 14px; }
+  .intelligence strong { font-size: 12px; line-height: 1.5; }
+  .intelligence span { font-size: 10px; line-height: 1.5; }
+  .aiCards { grid-template-columns: 1fr; gap: 11px; }
+  .document { transform: none; min-height: 0; display: grid; grid-template-columns: 24px minmax(0,1fr); gap: 4px 10px; padding: 13px; }
+  .document > svg { grid-row: 1/3; align-self: center; }
+  .document strong { margin: 0; font-size: 12px; }
+  .document > span { grid-column: 2; margin: 0; font-size: 10px; }
+  .document .textLines,.document small { display: none; }
+  .suggestion { min-height: 180px; padding: 16px; }
+  .suggestionTop { font-size: 11px; padding-bottom: 11px; margin-bottom: 13px; }
+  .suggestion strong { font-size: 14px; line-height: 1.5; }
+  .suggestion p { font-size: 12px; line-height: 1.7; }
+  .reviewTag { font-size: 11px; line-height: 1.6; margin-top: 14px; }
+  .sceneNote { font-size: 11px; line-height: 1.6; margin-top: 17px; text-align: center; }
+  .sceneNote svg { flex-shrink: 0; }
+  .accessHeader { font-size: 11px; margin-bottom: 13px; }
+  .policyLayer { font-size: 10px; line-height: 1.6; gap: 5px 9px; margin-bottom: 14px; }
+  .policyLayer > span + span { padding-left: 9px; }
+  .roleNode { padding: 12px; gap: 10px; }
+  .roleNode strong,.audit strong { font-size: 13px; }
+  .roleNode > div > span,.audit div > span { font-size: 11px; line-height: 1.5; }
+  .audit { padding: 12px; gap: 10px; }
+  .currentRole { transform: none; box-shadow: inset 3px 0 #76a68a; }
+}
 @media(prefers-reduced-motion:reduce) { .stories * { animation: none !important; transition: none !important; } .activeProduct,.currentRole,.document,.suggestion { transform: none; } }

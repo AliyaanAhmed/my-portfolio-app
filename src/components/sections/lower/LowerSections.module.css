@@ -445,6 +445,23 @@
   .copyRow > span { font-size: 10px; }
   .copyRow > button { font-size: 11px; }
 }
+@media(max-width: 599px) {
+  .section { padding-block: 54px; }
+  .inner { width: calc(100% - 40px); }
+  .scope .heading { font-size: clamp(29px,8vw,35px); line-height: 1.2; text-wrap: balance; }
+  .sectionHead { margin-bottom: 26px; }
+  .contactIntro,.briefBuilder { padding: 22px; }
+  .contactIntro h3 { font-size: 29px; }
+  .contactIntro > p { line-height: 1.75; }
+  .linkedinAction { width: 100%; justify-content: space-between; font-size: 12px; }
+  .topicChoices { display: grid; grid-template-columns: 1fr; gap: 8px; }
+  .topicChoices button { text-align: left; min-height: 44px; padding: 11px 13px; font-size: 12px; }
+  .briefText { font-size: 16px; line-height: 1.75; min-height: 0; padding-top: 18px; margin-top: 20px; }
+  .copyRow { padding-top: 20px; }
+  .copyRow > span { font-size: 11px; }
+  .copyRow > button { width: 100%; justify-content: center; min-height: 44px; font-size: 12px; }
+  .copyError { font-size: 12px; line-height: 1.7; }
+}
 @media (prefers-reduced-motion: reduce) {
   .scope *, .scope *::before, .scope *::after { transition: none !important; animation: none !important; }
   .caseLink:hover svg { transform: none; }

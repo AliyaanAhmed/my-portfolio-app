@@ -20,7 +20,10 @@ Manrope display, Inter body, Geist Mono for technical annotations. Off-white sur
 - Mobile hero has one centered sequence: introduction and actions, avatar over a subtle abstract neural-network diagram, then the single three-column toolkit grid. No duplicate product logos beside the avatar, software-window frame, botanical scenes, architectural arches, or curved text. All seven tools remain in the toolkit. Desktop remains unchanged.
 
 ## Verification boundary
+- Mobile process stories use wrapping logo/name tags without repeated role descriptions; diagram labels take priority over tiny captions. AI documents and suggestions stack vertically. Mobile section gutters are 20px, primary copy is 14px or larger, and contact choices/copy actions have 44px touch targets.
 Production builds include TypeScript compilation. Existing browser tests contain historical selectors; do not report them as current verification without running and updating them when requested.
 
 ## Git workflow
+Mobile navbar uses a 58px rounded rectangle inset 12px, understated monogram divider, and a labeled 44px menu control with a two-line close transition. Expanded navigation keeps the existing focus trap and Escape behavior.
+Expanded mobile navigation is a content-height dropdown with 48px link rows, a quiet active state, and one LinkedIn footer action. Omit numbered rows and full-screen empty panels. Outside click dismisses via a semantic backdrop control; keep Escape and focus restoration.
 Keep enhancements local. Do not commit or push unless the user explicitly asks.

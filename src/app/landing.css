@@ -411,18 +411,61 @@ main { overflow: clip; }
   .karachi-clock { font-size: 9px; }
   .footer-main > a:not(.brand) { font-size: 10px; }
 }
-/* Mobile navigation uses a quiet full-width bar, with stable geometry on scroll. */
+.mobile-nav-backdrop { display: none; }
+.menu-toggle-label { display: none; }
+.menu-toggle-lines { position: relative; width: 20px; height: 18px; display: block; }
+.menu-toggle-lines i { position: absolute; left: 0; width: 20px; height: 1.5px; border-radius: 2px; background: currentColor; transition: transform .2s,top .2s; }
+.menu-toggle-lines i:first-child { top: 5px; }
+.menu-toggle-lines i:last-child { top: 12px; }
+.menu-toggle[aria-expanded='true'] .menu-toggle-lines i:first-child { top: 8px; transform: rotate(45deg); }
+.menu-toggle[aria-expanded='true'] .menu-toggle-lines i:last-child { top: 8px; transform: rotate(-45deg); }
+/* Mobile navigation keeps a compact rounded rectangle and one clear menu action. */
 @media (max-width: 599px) {
-  .site-header { top: 0; }
-  .site-header .header-inner, .site-header.compact .header-inner { width: 100%; height: 66px; padding-inline: 20px; border-radius: 0; border: 0; border-bottom: 1px solid #dde5dd; box-shadow: none; background: #fafaf7f2; gap: 12px; transition: background .2s,color .2s; }
-  .site-header .brand { font-size: 14px; gap: 9px; letter-spacing: -.025em; }
-  .site-header .brand-mark { width: auto; height: auto; padding: 0; margin: 0; border: 0; font-size: 22px; letter-spacing: -2px; }
-  .site-header .menu-toggle { border: 1px solid #dae3d8; border-radius: 9px; width: 44px; height: 44px; color: inherit; }
-  .site-header .menu-toggle svg { width: 20px; height: 20px; }
-  .site-header .header-progress { left: 0; right: 0; bottom: -1px; }
-  .site-header .mobile-navigation { top: 76px; bottom: 10px; border-radius: 12px; }
-  .site-header[data-theme='dark'] .header-inner { border-bottom-color: #426150; background: #17352ff5; }
-  .site-header[data-theme='dark'] .menu-toggle { border-color: #526e5b; }
+  .expertise-intro .landing-heading h2 { font-size: clamp(30px,8.5vw,38px); line-height: 1.2; }
+  .expertise-hint { margin-bottom: 21px; font-size: 12px; }
+  .capability-rows button { gap: 12px; padding-block: 18px; min-height: 76px; }
+  .capability-rows button strong { font-size: 19px; line-height: 1.4; }
+  .capability-rows button small { font-size: 12px; line-height: 1.7; }
+  .capability-preview { padding: 18px; border-radius: 14px; }
+  .capability-preview li { align-items: flex-start; line-height: 1.7; }
+  .capability-preview li svg { flex-shrink: 0; margin-top: 3px; }
+  .footer-bottom { font-size: 10px; line-height: 1.7; }
+  .site-header { top: 10px; }
+  .site-header .header-inner, .site-header.compact .header-inner { width: calc(100% - 24px); height: 58px; padding-inline: 14px 8px; border-radius: 14px; border: 1px solid #dce5dc; box-shadow: 0 5px 20px #173a2a08; background: #fafaf7ed; gap: 10px; transition: background .2s,color .2s; }
+  .site-header .brand { font-size: 13px; gap: 11px; letter-spacing: -.025em; font-weight: 550; }
+  .site-header .brand-mark { width: auto; height: 25px; padding: 0 11px 0 0; margin: 0; border-right: 1px solid #cbd8cc; font-size: 21px; letter-spacing: -2px; }
+  .site-header .menu-toggle { border: 0; border-radius: 8px; width: auto; min-width: 69px; height: 44px; color: inherit; gap: 9px; padding-inline: 7px; }
+  .site-header .menu-toggle-label { display: inline; font-size: 10px; font-weight: 500; }
+  .site-header .menu-toggle:hover { background: #dce8d74d; }
+  .site-header .header-progress { left: 14px; right: 14px; bottom: -1px; height: 1px; }
+  .site-header .mobile-navigation { top: 77px; bottom: 12px; left: 12px; right: 12px; border-radius: 14px; padding: 25px; box-shadow: 0 15px 35px #163d2917; }
+  .site-header .mobile-navigation nav a { font-size: 29px; min-height: 66px; }
+  .site-header .mobile-navigation nav a small { font-size: 9px; }
+  .site-header .mobile-navigation > .eyebrow { font-size: 9px; margin-bottom: 20px; }
+  .site-header .mobile-menu-location { display: none; }
+  .site-header[data-theme='dark'] .header-inner { border-color: #426150; background: #17352ff0; }
+  .site-header[data-theme='dark'] .brand-mark { border-right-color: #526e5b; }
+}
+@media(max-width: 899px) {
+  .site-header .header-inner { z-index: 2; }
+  .mobile-nav-backdrop { display: block; position: fixed; inset: 0; width: 100%; height: 100dvh; border: 0; background: #122a2926; backdrop-filter: blur(3px); pointer-events: auto; z-index: 0; cursor: default; }
+  .site-header .mobile-navigation { top: 88px; bottom: auto; left: 18px; right: 18px; max-height: calc(100dvh - 108px); padding: 10px; gap: 0; border: 1px solid #dbe4d8; border-radius: 15px; background: #fafcf8; box-shadow: 0 15px 45px #102c2926; z-index: 1; }
+  .site-header .mobile-navigation nav { display: grid; gap: 3px; }
+  .site-header .mobile-navigation nav a { min-height: 48px; padding: 12px 14px; gap: 12px; border: 0; border-radius: 8px; font: 500 15px/1.5 var(--font-body),sans-serif; letter-spacing: -.015em; color: #3c5645; }
+  .site-header .mobile-navigation nav a > svg { width: 16px; height: 16px; color: #8ca18f; }
+  .site-header .mobile-navigation nav a:hover { background: #edf3e7; }
+  .site-header .mobile-navigation nav a[aria-current] { background: #e5eedf; color: #28583e; }
+  .mobile-nav-current { margin-left: auto; font-size: 10px; color: #64836a; font-weight: 400; }
+  .site-header .mobile-navigation > .mobile-nav-contact { justify-content: space-between; margin: 10px 0 0; padding: 15px 14px 8px; border-top: 1px solid #e0e8db; font-size: 12px; min-height: 49px; color: #587961; }
+  .site-header[data-theme='dark'] .mobile-navigation { background: #18372c; border-color: #3e5b47; color: #eaf2e5; }
+  .site-header[data-theme='dark'] .mobile-navigation nav a { color: #d7e4d4; }
+  .site-header[data-theme='dark'] .mobile-navigation nav a:hover { background: #274936; }
+  .site-header[data-theme='dark'] .mobile-navigation nav a[aria-current] { background: #35553d; color: #fff; }
+  .site-header[data-theme='dark'] .mobile-nav-current { color: #b3cba7; }
+  .site-header[data-theme='dark'] .mobile-navigation > .mobile-nav-contact { color: #c0d6b5; border-top-color: #3e5b47; }
+}
+@media(max-width: 599px) {
+  .site-header .mobile-navigation { top: 76px; left: 12px; right: 12px; max-height: calc(100dvh - 96px); }
 }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1 !important; transform: none !important; }
