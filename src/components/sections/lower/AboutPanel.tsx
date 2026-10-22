@@ -9,7 +9,7 @@ export function AboutPanel() {
     <Reveal className={s.copy} direction="left">
       <span className={s.intro}>POWER PLATFORM CONSULTANT & DEVELOPER</span>
       <h2>Hi, I’m Aliyaan<span>.</span></h2>
-      <p>I bring design, automation, and AI together to make everyday work easier.</p>
+      <p>I combine Power Platform, React, and TypeScript to make complex workflows feel simple.</p>
       <div className={s.actions}><a href={profile.links.linkedin} target="_blank" rel="noopener noreferrer">More about me <ArrowUpRight size={18} /></a><span className={s.location}><MapPin size={14} /> Karachi, Pakistan</span></div>
       <details className={s.education}><summary>Education <Plus size={16} /></summary><div>{education.map(item => <p key={item.school}><strong>{item.course}</strong><span>{item.school}</span></p>)}</div></details>
     </Reveal>

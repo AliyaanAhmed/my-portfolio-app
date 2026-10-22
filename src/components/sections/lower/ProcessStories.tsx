@@ -19,7 +19,7 @@ function Product({ name, caption, active = false }: { name: ProductName; caption
 
 function Architecture({ phase }: { phase: number }) {
   return <div className={s.architecture} aria-label="Power Pages, Power Apps and Code Apps connect through Dataverse to Power Automate">
-    <div className={s.interfaceRow}><Product name="Power Pages" caption="Public portal" active={phase === 0} /><Product name="Power Apps" caption="Team workspace" active={phase === 0} /><Product name="Code Apps" caption="Custom experience" active={phase === 0} /></div>
+    <div className={s.interfaceRow}><Product name="Power Pages" caption="Public portal" active={phase === 0} /><Product name="Power Apps" caption="Team workspace" active={phase === 0} /><Product name="Code Apps" caption="React + TSX" active={phase === 0} /></div>
     <div className={`${s.bus} ${phase >= 1 ? s.connected : ''}`} aria-hidden="true"><i /><i /><i /></div>
     <div className={s.foundation}><Product name="Dataverse" caption="Shared data · defined access" active={phase === 1} /><span className={`${s.wire} ${phase >= 2 ? s.connected : ''}`} aria-hidden="true"><ArrowRight size={15} /></span><Product name="Power Automate" caption="Connected workflows" active={phase === 2} /></div>
     <div className={`${s.outcome} ${phase === 3 ? s.outcomeActive : ''}`}><Check size={15} /> One system. A clear path for every user.</div>
