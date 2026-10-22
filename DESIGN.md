@@ -15,6 +15,7 @@ Manrope display, Inter body, Geist Mono for technical annotations. Off-white sur
 - Expertise previews size to content without a forced minimum height. Platform tiles use compact horizontal logo/name layouts, with Dataverse and Power Automate sharing one foundation row.
 - Power Apps Consultant is the current title. CNSAC Med uses Application Consultant; engineering roles use Software Engineer. CNSAC Med and Mech Connect are Germany-based; Mech Connect includes AI integration per the user's correction.
 - Preserve reduced-motion behavior, native scrolling, accessible disclosures, focus styles, and responsive gutters.
+- About uses centered, balanced statement typography with a centered byline and actions beside the portrait. Education is omitted from this section at the user's request.
 
 ## Verification boundary
 Production builds include TypeScript compilation. Existing browser tests contain historical selectors; do not report them as current verification without running and updating them when requested.
