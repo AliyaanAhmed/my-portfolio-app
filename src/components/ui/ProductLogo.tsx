@@ -12,6 +12,8 @@ export const productLogos = {
   React: '/logos/react.svg',
   'React SPA': '/logos/react.svg',
   TypeScript: '/logos/typescript.svg',
+  Azure: '/logos/azure.svg',
+  AI: '/logos/ai-builder.svg',
 } as const;
 
 export type ProductName = keyof typeof productLogos;

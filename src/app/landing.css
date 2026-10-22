@@ -411,6 +411,19 @@ main { overflow: clip; }
   .karachi-clock { font-size: 9px; }
   .footer-main > a:not(.brand) { font-size: 10px; }
 }
+/* Mobile navigation uses a quiet full-width bar, with stable geometry on scroll. */
+@media (max-width: 599px) {
+  .site-header { top: 0; }
+  .site-header .header-inner, .site-header.compact .header-inner { width: 100%; height: 66px; padding-inline: 20px; border-radius: 0; border: 0; border-bottom: 1px solid #dde5dd; box-shadow: none; background: #fafaf7f2; gap: 12px; transition: background .2s,color .2s; }
+  .site-header .brand { font-size: 14px; gap: 9px; letter-spacing: -.025em; }
+  .site-header .brand-mark { width: auto; height: auto; padding: 0; margin: 0; border: 0; font-size: 22px; letter-spacing: -2px; }
+  .site-header .menu-toggle { border: 1px solid #dae3d8; border-radius: 9px; width: 44px; height: 44px; color: inherit; }
+  .site-header .menu-toggle svg { width: 20px; height: 20px; }
+  .site-header .header-progress { left: 0; right: 0; bottom: -1px; }
+  .site-header .mobile-navigation { top: 76px; bottom: 10px; border-radius: 12px; }
+  .site-header[data-theme='dark'] .header-inner { border-bottom-color: #426150; background: #17352ff5; }
+  .site-header[data-theme='dark'] .menu-toggle { border-color: #526e5b; }
+}
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1 !important; transform: none !important; }
 }

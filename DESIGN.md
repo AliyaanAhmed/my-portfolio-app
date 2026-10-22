@@ -7,7 +7,7 @@ Introduce Aliyaan's Power Apps consulting, software engineering, and AI integrat
 Manrope display, Inter body, Geist Mono for technical annotations. Off-white surfaces, dark green expertise/contact sections, muted green accents. Runtime styling lives in `src/app/globals.css`, `src/app/landing.css`, and scoped section CSS modules. Reuse these owners and `ProductLogo` rather than introducing another theme or logo system.
 
 ## Current decisions
-- The hero avatar follows fine-pointer movement beside a compact introduction. Product logos form a four-column toolkit directly below the introduction actions, visible before the avatar on mobile. Avoid floating badges covering the portrait. Labels stay visible on touch devices.
+- The hero uses scoped `HeroSection.module.css`: a compact introduction and contained avatar, followed by one full-width technology row. On mobile the technology row precedes the avatar. Preserve readable product labels and avoid floating badges. The current theme remains unchanged pending a palette selection.
 - Hero height follows content; desktop avatar scales to available viewport height. The avatar does not translate vertically on scroll. Toolkit remains in normal text flow, with no divider near the shoes. Hero bottom padding separates it from Expertise.
 - Expertise has topic-specific previews; How I Build uses animated process scenes; Experience uses expandable timeline rows; About uses a large statement beside the complete supplied portrait.
 - Expertise has three groups: Power Platform Solution & Automation, AI-assisted workflows, and Frontend Architecture & UI/UX. The frontend group offers architecture and prototype views. About's byline uses Power Platform Consultant. Alternative palettes are proposals only until selected by the user.
@@ -16,6 +16,10 @@ Manrope display, Inter body, Geist Mono for technical annotations. Off-white sur
 - Power Apps Consultant is the current title. CNSAC Med uses Application Consultant; engineering roles use Software Engineer. CNSAC Med and Mech Connect are Germany-based; Mech Connect includes AI integration per the user's correction.
 - Preserve reduced-motion behavior, native scrolling, accessible disclosures, focus styles, and responsive gutters.
 - About uses centered, balanced statement typography with a centered byline and actions beside the portrait. Education is omitted from this section at the user's request.
+- Mobile navigation uses a stable full-width bar, legible wordmark, and 44px menu control. Mobile hero centers its introduction and compact avatar, then uses wrapping logo/name chips for the toolkit. Mobile About places the portrait at 23% opacity behind the centered text, without a separate image row. Desktop compositions remain unchanged.
 
 ## Verification boundary
 Production builds include TypeScript compilation. Existing browser tests contain historical selectors; do not report them as current verification without running and updating them when requested.
+
+## Git workflow
+Keep enhancements local. Do not commit or push unless the user explicitly asks.

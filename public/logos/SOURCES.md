@@ -15,3 +15,4 @@ Code Apps reference: https://learn.microsoft.com/en-us/power-apps/developer/code
 - React: the React mark is extracted from the official https://react.dev/ website SVG. Its vector geometry is retained; its standalone color uses the site's dark-theme cyan.
 - TypeScript: the primary `ts-logo-128.svg` from https://www.typescriptlang.org/branding/typescript-design-assets.zip, via https://www.typescriptlang.org/branding/.
 - The small JS label is a typographic language identifier, not a claim of an official JavaScript logo.
+- Azure logo: https://github.com/devicons/devicon/blob/master/icons/azure/azure-original.svg. The AI toolkit entry uses the official Microsoft AI Builder logo from the Power Platform icon collection above.

@@ -16,5 +16,15 @@
 .portrait { position: relative; align-self: end; min-width: 0; display: flex; justify-content: center; }
 .portrait img { display: block; width: 100%; max-width: 420px; height: auto; object-fit: contain; }
 @media(max-width: 899px) { .about { gap: 25px; min-height: 0; grid-template-columns: 1.4fr 1fr; } .copy h2 { font-size: 38px; } .copy h2.statement { font-size: 31px; } .copy > p { font-size: 16px; } .intro { font-size: 10px; } }
-@media(max-width: 700px) { .about { grid-template-columns: 1fr; gap: 24px; } .copy { padding-block: 20px; } .copy h2 { font-size: clamp(36px,8vw,49px); } .copy > p { font-size: 17px; } .portrait { width: min(380px,100%); justify-self: center; } }
+@media(max-width: 700px) {
+  .about { position: relative; isolation: isolate; display: grid; grid-template-columns: 1fr; gap: 0; min-height: 470px; overflow: clip; }
+  .copy { position: relative; z-index: 1; padding: 44px 10px; align-self: center; }
+  .copy h2.statement { font-size: clamp(28px,7.4vw,38px); line-height: 1.45; color: #253c30; }
+  .byline { color: #65796b; font-size: 10px; margin-top: 24px; }
+  .actions { flex-direction: column; gap: 9px; margin-top: 20px; }
+  .actions > a { font-size: 12px; }
+  .location { font-size: 10px; }
+  .portrait { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; justify-self: stretch; align-self: stretch; z-index: 0; pointer-events: none; user-select: none; }
+  .portrait img { width: 100%; height: 100%; max-width: 370px; object-fit: contain; object-position: center bottom; opacity: .23; filter: grayscale(.4); mask-image: linear-gradient(transparent,black 12%,black 85%,transparent); }
+}
 @media(prefers-reduced-motion:reduce) { .actions > a:hover svg { transform: none; } }
