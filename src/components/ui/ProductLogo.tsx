@@ -8,6 +8,10 @@ export const productLogos = {
   'Power Pages': '/logos/power-pages.svg',
   'AI Builder': '/logos/ai-builder.svg',
   'Copilot Studio': '/logos/copilot-studio.svg',
+  'Azure Document Intelligence': '/logos/azure-document-intelligence.svg',
+  React: '/logos/react.svg',
+  'React SPA': '/logos/react.svg',
+  TypeScript: '/logos/typescript.svg',
 } as const;
 
 export type ProductName = keyof typeof productLogos;

@@ -1,0 +1,24 @@
+.timeline { position: relative; border-top: 1px solid #dce5dd; }
+.entry { border-bottom: 1px solid #dce5dd; }
+.entry summary { position: relative; display: grid; grid-template-columns: 145px 22px minmax(0,1fr) minmax(140px,.6fr) 22px; gap: 25px; align-items: center; min-height: 132px; padding-block: 24px; cursor: pointer; list-style: none; }
+.entry summary::-webkit-details-marker { display: none; }
+.entry summary:after { content: ''; position: absolute; left: 180px; top: 0; bottom: 0; width: 1px; background: #dce5dd; z-index: 0; }
+.year { font-size: 12px; color: #829185; font-variant-numeric: tabular-nums; }
+.marker { width: 9px; height: 9px; border-radius: 50%; border: 1px solid #8ca995; background: #fafaf7; position: relative; z-index: 1; justify-self: center; transition: background .2s; }
+.company { display: block; min-width: 0; }
+.company strong { display: block; font: 500 clamp(22px,2.3vw,31px)/1.3 var(--font-display),sans-serif; letter-spacing: -.04em; color: #2e4b38; }
+.company > span { display: block; font-size: 11px; color: #8b9a8f; margin-top: 8px; }
+.role { font-size: 12px; color: #75877b; justify-self: end; text-align: right; line-height: 1.6; }
+.entry summary > svg { color: #75927e; transition: transform .25s; }
+.entry[open] summary > svg { transform: rotate(45deg); }
+.entry[open] .marker,.entry:hover .marker { background: #5f876c; }
+.entry:hover .company strong { color: #518064; }
+.detail { padding: 0 50px 32px 217px; }
+.context { display: block; font-size: 10px; color: #8a9b8f; line-height: 1.7; }
+.position { margin-top: 22px; max-width: 650px; }
+.position h3 { font: 500 15px/1.6 var(--font-body),sans-serif; letter-spacing: 0; color: #46644f; }
+.position > span { display: block; font-size: 11px; color: #8b9a90; margin-top: 3px; }
+.position p { font-size: 13px; line-height: 1.8; color: #6e8173; margin-top: 8px; }
+@media(max-width: 1000px) { .entry summary { grid-template-columns: 110px 16px minmax(0,1fr) 140px 20px; gap: 18px; } .entry summary:after { left: 135px; } .detail { padding-left: 162px; } .company strong { font-size: 25px; } }
+@media(max-width: 700px) { .entry summary { grid-template-columns: 12px minmax(0,1fr) 22px; gap: 9px 16px; min-height: 125px; padding-block: 24px; } .entry summary:after { left: 5px; } .marker { grid-column: 1; grid-row: 1/4; } .year { grid-column: 2; font-size: 10px; } .company { grid-column: 2; grid-row: 2; } .company strong { font-size: 26px; } .company > span { display: none; } .role { grid-column: 2; grid-row: 3; justify-self: start; text-align: left; font-size: 11px; } .entry summary > svg { grid-column: 3; grid-row: 1/4; } .detail { padding: 0 15px 28px 28px; } .position p { font-size: 12px; } }
+@media(prefers-reduced-motion:reduce) { .timeline * { transition: none; } }

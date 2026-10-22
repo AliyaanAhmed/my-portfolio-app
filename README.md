@@ -23,7 +23,7 @@ No API keys, database, CMS, or external account is needed. Initial font compilat
 ## Content and design
 
 - `src/content/profile.ts`: name, positioning, biography, real links, portrait, education, and configurable site URL.
-- `src/content/experience.ts`: employer groups, editable role dates, descriptions, and current role. Supplied overlaps are intentional. Esports is a separate earlier operations chapter.
+- `src/content/experience.ts`: employer groups, editable role dates, descriptions, and current role. Supplied overlaps are intentional. CNSAC is listed as an App Consultant engagement at a medical company; dates are omitted because they have not been supplied.
 - `src/content/projects.ts`: three project stories, slugs, provenance, walkthroughs, constraints, and next steps.
 - `src/content/expertise.ts`: five capability previews, led by Power Platform, Power Automate, and AI-assisted workflows.
 - `src/app/globals.css`: shared tokens, interface illustrations, case-study layouts, and responsive foundations.
@@ -40,8 +40,9 @@ The original supplied files are preserved as `public/images/FormalDress.png` and
 - `AvatarStage.tsx` creates head/body layers using CSS clipping of the same PNG, then spring-driven perspective rotations track the pointer. This is a 2.5D illustration effect, not a rigged 3D character. Fine pointer devices receive the interaction; touch devices keep a stable avatar. There is no image synthesis or modification of the source PNG.
 - `ProcessStories.tsx` replaces the two former work/demo panels with three automatically advancing visual concepts: connected architecture, AI suggestions with human review, and role-based enterprise/government approvals. Each has four clearly labeled stages, viewport-aware playback, and a pause control. Reduced motion shows a static final overview. These are explanatory animations, with no live AI, authorization, or business connections.
 - `SiteHeader.tsx` compacts into a floating pill, tracks the current section, animates the active navigation link, and adapts to dark sections. It also shows page progress.
-- `ExperienceExplorer.tsx` selects employers and reveals their supplied roles and dates; the operations chapter is explicitly separate.
-- `AboutPanel.tsx` uses an open editorial layout with short personal copy and the entire supplied portrait, without cropping. Education is available in native expandable content.
+- `ExperienceExplorer.tsx` presents a distinct vertical career timeline, with native expandable employer rows and supplied role dates.
+- `AboutPanel.tsx` uses a large first-person positioning statement on the left and the entire supplied portrait on the right. The statement is portfolio copy, not an attributed historical quote. Education is available in native expandable content.
+- `CapabilityVisual.tsx` supplies five topic-specific previews: platform architecture, automation, document extraction and AI, React component structure, and a working two-step UI/UX prototype. React and UI/UX previews do not reuse the business-platform diagram.
 - `ProductLogo.tsx` serves Microsoft's official product artwork in diagrams and product labels. Asset attribution and Code Apps logo mapping are documented in `public/logos/SOURCES.md`.
 - `ContactPanel.tsx` builds a short message from a selected topic, copies it only after clipboard access succeeds, and provides a manual-copy fallback if access fails. The actual contact action opens the supplied LinkedIn URL. Nothing is automatically sent.
 - `Reveal.tsx` now starts content hidden, reveals it with translation and opacity when at least 12% enters the viewport (with a 48px bottom inset), and replays when it leaves and re-enters. Headings, project cards, individual capabilities, career rows, the About portrait and copy, contact, and footer use it. Focus reveals keyboard targets. A `noscript` fallback keeps content visible without JavaScript.

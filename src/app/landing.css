@@ -57,7 +57,7 @@ main { overflow: clip; }
 .capability-rows button.active { color: white; }
 .capability-rows button.active > svg { color: #cbe7aa; transform: rotate(45deg); }
 .capability-rows button:focus-visible { outline-color: #cbe7aa; }
-.capability-preview { background-color: #203d32; background-image: none; border-color: #49674d; border-radius: 20px; padding: 30px; min-height: 574px; box-shadow: none; }
+.capability-preview { background-color: #203d32; background-image: none; border-color: #49674d; border-radius: 20px; padding: 30px; min-height: 700px; box-shadow: none; }
 .capability-top .mono { font-family: var(--font-body), sans-serif; font-size: 9px; letter-spacing: .05em; }
 .capability-icon { width: 52px; height: 52px; margin-top: 26px; border-radius: 13px; }
 .capability-icon svg { width: 27px; }
@@ -220,7 +220,7 @@ main { overflow: clip; }
   .capability-rows button strong { font-size: 19px; }
   .capability-rows button small { font-size: 11px; }
   .capability-rows button > svg { width: 18px; }
-  .capability-preview { min-height: 584px; padding: 23px; }
+  .capability-preview { min-height: 700px; padding: 23px; }
   .capability-preview h3 { font-size: 27px; }
   .capability-top .mono { font-size: 7px; }
   .capability-preview li { font-size: 10px; }
@@ -321,7 +321,7 @@ main { overflow: clip; }
   .capability-rows button { padding-block: 21px; min-height: 84px; gap: 17px; }
   .capability-rows button strong { font-size: 21px; }
   .capability-rows button small { font-size: 12px; }
-  .capability-preview { min-height: 575px; padding: 25px; }
+  .capability-preview { min-height: 700px; padding: 25px; }
   .capability-preview h3 { font-size: 30px; }
   .capability-top .mono { font-size: 8px; }
   .capability-preview li { font-size: 11px; }

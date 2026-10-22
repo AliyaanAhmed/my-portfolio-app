@@ -6,6 +6,18 @@
 .storyCopy > p { color: #607066; font-size: 15px; line-height: 1.8; margin-top: 19px; max-width: 340px; }
 .products { display: flex; flex-wrap: wrap; gap: 15px 18px; margin-top: 28px; max-width: 360px; }
 .products > span { display: inline-flex; align-items: center; gap: 7px; font-size: 10px; color: #52685b; }
+.tools { display: grid; gap: 17px; margin-top: 27px; }
+.tools > div { display: flex; align-items: center; gap: 12px; }
+.tools strong { display: block; font-size: 11px; font-weight: 500; color: #42604d; }
+.tools small { display: block; font-size: 10px; color: #8a9a8e; margin-top: 4px; }
+.architectureLogic { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; margin-top: 19px; color: #7d9283; font-size: 8px; }
+.architectureLogic i { width: 3px; height: 3px; background: #9cb3a2; border-radius: 50%; }
+.intelligence { display: flex; align-items: center; gap: 10px; padding: 13px; background: #fff; border: 1px solid #dce6df; border-radius: 8px; margin-bottom: 20px; }
+.intelligence strong { display: block; font-size: 11px; color: #446650; font-weight: 500; }
+.intelligence span { display: block; font-size: 9px; color: #8a9f90; margin-top: 6px; }
+.intelligence > svg { margin-left: auto; color: #4c8764; }
+.policyLayer { display: flex; flex-wrap: wrap; gap: 6px 12px; margin-bottom: 16px; font-size: 8px; color: #7d9382; }
+.policyLayer > span + span { border-left: 1px solid #cbdcd0; padding-left: 12px; }
 .visual { min-width: 0; border: 1px solid #dbe5df; border-radius: 16px; background: #f2f6f2; overflow: hidden; box-shadow: 0 16px 40px -32px #193d3533; }
 .visualHeader { display: flex; justify-content: space-between; align-items: center; padding: 12px 19px; border-bottom: 1px solid #e1e9e2; }
 .visualHeader > span { display: flex; align-items: center; gap: 8px; font-size: 8px; letter-spacing: .1em; color: #718477; }

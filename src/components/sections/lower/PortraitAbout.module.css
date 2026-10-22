@@ -1,8 +1,12 @@
-.about { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(0,1fr); align-items: center; gap: 50px; min-height: 570px; }
-.copy { padding-block: 35px; max-width: 480px; }
+.about { display: grid; grid-template-columns: minmax(0,1.7fr) minmax(0,1fr); align-items: center; gap: 55px; min-height: 570px; }
+.copy { padding-block: 35px; max-width: 680px; }
 .intro { display: block; max-width: 100%; font-size: 11px; line-height: 1.8; letter-spacing: .07em; color: #627969; }
 .copy h2 { font-family: var(--font-display),sans-serif; font-size: clamp(38px,3.7vw,53px); font-weight: 500; letter-spacing: -.04em; line-height: 1.2; color: #253c30; margin-top: 20px; text-wrap: balance; }
 .copy h2 > span { color: #55846b; }
+.copy h2.statement { font-size: clamp(30px,3.2vw,45px); line-height: 1.45; letter-spacing: -.045em; font-weight: 450; margin: 0; text-wrap: pretty; }
+.statement > span { color: #58876c; }
+.byline { display: flex; align-items: center; gap: 12px; margin-top: 30px; color: #8a978e; font-size: 11px; line-height: 1.7; }
+.byline i { width: 23px; height: 1px; background: #ccd7ce; flex-shrink: 0; }
 .copy > p { max-width: 385px; font-size: 18px; color: #63766a; line-height: 1.8; margin-top: 24px; text-wrap: pretty; }
 .actions { display: flex; align-items: center; flex-wrap: wrap; gap: 16px 28px; margin-top: 30px; }
 .location { display: flex; align-items: center; gap: 7px; color: #718578; font-size: 12px; }
@@ -19,6 +23,6 @@
 .education p { font-size: 11px; line-height: 1.7; margin: 0 0 14px; }
 .education strong { display: block; color: #46644f; font-weight: 500; }
 .education p span { display: block; color: #89978c; }
-@media(max-width: 899px) { .about { gap: 25px; min-height: 0; } .copy h2 { font-size: 38px; } .copy > p { font-size: 16px; } .intro { font-size: 10px; } }
+@media(max-width: 899px) { .about { gap: 25px; min-height: 0; grid-template-columns: 1.4fr 1fr; } .copy h2 { font-size: 38px; } .copy h2.statement { font-size: 31px; } .copy > p { font-size: 16px; } .intro { font-size: 10px; } }
 @media(max-width: 700px) { .about { grid-template-columns: 1fr; gap: 24px; } .copy { padding-block: 20px; } .copy h2 { font-size: clamp(36px,8vw,49px); } .copy > p { font-size: 17px; } .portrait { width: min(380px,100%); justify-self: center; } }
 @media(prefers-reduced-motion:reduce) { .actions > a:hover svg { transform: none; } }
