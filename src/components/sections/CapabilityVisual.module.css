@@ -1,4 +1,8 @@
 .visual { margin-top: 26px; min-height: 270px; color: #d3e3d6; }
+.viewSwitch { display: flex; gap: 8px; margin-top: 24px; }
+.viewSwitch button { min-height: 44px; padding: 9px 13px; border: 1px solid #52735e; border-radius: 6px; background: transparent; color: #b2cbb9; font: 11px var(--font-body),sans-serif; }
+.viewSwitch button[aria-pressed='true'] { background: #c5dcb5; color: #25402d; border-color: #c5dcb5; }
+.viewSwitch button:focus-visible { outline: 3px solid #b2cf9e; outline-offset: 3px; }
 .techRow { display: flex; flex-wrap: wrap; align-items: center; gap: 19px; margin-bottom: 21px; }
 .techRow > span { display: flex; align-items: center; gap: 7px; font-size: 12px; }
 .techRow .jsBadge { display: grid; place-items: center; width: 24px; height: 24px; font-size: 11px; font-weight: 650; background: #f7df1e; color: #252718; border-radius: 3px; }

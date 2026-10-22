@@ -6,6 +6,16 @@ import { ProductLogo } from '@/components/ui/ProductLogo';
 import s from './CapabilityVisual.module.css';
 
 export function CapabilityVisual({ kind }: { kind: 'platform' | 'automation' | 'ai' | 'frontend' | 'design' }) {
+  if (kind === 'frontend') return <FrontendAndDesign />;
+  return <CapabilityDetail kind={kind} />;
+}
+
+function FrontendAndDesign() {
+  const [view, setView] = useState<'frontend' | 'design'>('frontend');
+  return <div><div className={s.viewSwitch} role="group" aria-label="Frontend and design preview"><button aria-pressed={view === 'frontend'} onClick={() => setView('frontend')}>Architecture</button><button aria-pressed={view === 'design'} onClick={() => setView('design')}>UI/UX prototype</button></div><CapabilityDetail kind={view} /></div>;
+}
+
+function CapabilityDetail({ kind }: { kind: 'platform' | 'automation' | 'ai' | 'frontend' | 'design' }) {
   if (kind === 'frontend') return <div className={s.visual}>
     <div className={s.techRow}><span><ProductLogo name="React" size={24} />React SPA</span><span><ProductLogo name="TypeScript" size={20} />TSX</span><span className={s.jsBadge}>JS</span></div>
     <div className={s.codeWindow}><div className={s.windowBar}><i /><i /><i /><span>frontend / src</span></div><div className={s.codeTree}><span><Component size={15} /><strong>components/</strong><small>reusable UI</small></span><span><LayoutTemplate size={15} /><strong>features/</strong><small>screens & routes</small></span><span><GitBranch size={15} /><strong>hooks/</strong><small>state & behaviour</small></span><span><ArrowRight size={15} /><strong>services/</strong><small>typed API contracts</small></span></div></div>
@@ -25,6 +35,7 @@ export function CapabilityVisual({ kind }: { kind: 'platform' | 'automation' | '
   return <div className={s.visual}>
     <div className={s.platformGrid}>{([{name:'Power Pages',caption:'Public-facing portals'},{name:'Power Apps',caption:'Internal business apps'},{name:'Code Apps',caption:'Custom React experiences'},{name:'React SPA',caption:'Independent web apps'}] as const).map(tool=><div key={tool.name}><ProductLogo name={tool.name} size={30} /><strong>{tool.name}</strong><span>{tool.caption}</span></div>)}</div>
     <div className={s.dataLink}><ArrowDown size={15} /></div><div className={s.dataFoundation}><ProductLogo name="Dataverse" size={30} /><div><strong>Dataverse</strong><span>Shared data · relationships · access roles</span></div><ShieldCheck size={19} /></div>
+    <div className={s.dataLink}><ArrowDown size={15} /></div><div className={s.dataFoundation}><ProductLogo name="Power Automate" size={30} /><div><strong>Power Automate</strong><span>Trigger → approval → notification</span></div><GitBranch size={19} /></div>
   </div>;
 }
 
