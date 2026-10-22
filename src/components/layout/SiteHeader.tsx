@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
@@ -57,7 +56,7 @@ export function SiteHeader() {
 
   return <header className={`site-header ${compact ? 'compact' : ''} ${open ? 'menu-is-open' : ''}`} data-theme={theme} data-active-section={active}>
     <div className="header-inner">
-      <Link className="brand" href="/" aria-label="Aliyaan Ahmed home"><span className="brand-photo"><Image src="/images/FormalDress.png" width={80} height={80} alt="" sizes="40px" /></span><span>Aliyaan Ahmed<small>Power Platform & beyond</small></span><span className="brand-dot">↗</span></Link>
+      <Link className="brand" href="/" aria-label="Aliyaan Ahmed home"><span className="brand-mark" aria-hidden="true">AA<span>.</span></span><span>Aliyaan Ahmed</span></Link>
       <nav className="desktop-nav" aria-label="Main navigation">{navigation.map(([label, id]) => <Link key={id} href={`/#${id}`} aria-current={active === id ? 'location' : undefined}>{active === id && <motion.span className="nav-active-pill" layoutId="active-section" transition={reduced ? { duration: 0 } : { type: 'spring', stiffness: 300, damping: 30 }} />}<span>{label}</span></Link>)}</nav>
       <a className="header-link" href={profile.links.linkedin} target="_blank" rel="noopener noreferrer">Let’s talk <ArrowUpRight size={16} /></a>
       <button ref={toggle} className="menu-toggle" aria-expanded={open} aria-controls="mobile-navigation" aria-label={open ? 'Close menu' : 'Open menu'} onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>

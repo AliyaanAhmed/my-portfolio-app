@@ -35,7 +35,7 @@ Static section shells and project pages are Server Components. Small Client Comp
 
 ## Motion and personal artwork
 
-The original supplied files are preserved as `public/images/FormalDress.png` and `public/images/Avatar.png`. `next/image` serves optimized versions with transparency. The formal portrait appears in About and the navigation identity; the illustrated avatar is the hero centerpiece.
+The original supplied files are preserved as `public/images/FormalDress.png` and `public/images/Avatar.png`. `next/image` serves optimized versions with transparency. The formal portrait appears in About; the illustrated avatar is the hero centerpiece. Navigation uses a simple AA monogram and name.
 
 - `AvatarStage.tsx` creates head/body layers using CSS clipping of the same PNG, then spring-driven perspective rotations track the pointer. This is a 2.5D illustration effect, not a rigged 3D character. Fine pointer devices receive the interaction; touch devices keep a stable avatar. There is no image synthesis or modification of the source PNG.
 - `WorkExplorer.tsx` switches between three **working local concept interfaces**: review evidence and approve or request changes; step through a guided inquiry; search, filter, and complete synthetic work items. Each view links to its corresponding detail page. These demos do not connect to real systems, and the inquiry never submits information.
