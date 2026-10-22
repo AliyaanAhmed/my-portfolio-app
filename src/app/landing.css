@@ -54,7 +54,12 @@ main { overflow: clip; }
 /* Capability selection: only the active row carries explanatory text. */
 .expertise-section { background: #142c27; }
 .expertise-section .section-aside { color: #a7beb0; }
-.expertise-explorer { grid-template-columns: 1.05fr 1fr; gap: 75px; }
+.expertise-explorer { grid-template-columns: 1.05fr 1fr; gap: 75px; align-items: start; }
+.expertise-intro { min-width: 0; }
+.expertise-intro .landing-heading { margin-bottom: 18px; }
+.expertise-intro .landing-heading h2 { font-size: clamp(36px,3.5vw,49px); }
+.expertise-hint { font-size: 12px; color: #a7beb0; margin: 0 0 26px; }
+.expertise-explorer > .reveal { margin-top: 43px; }
 .capability-rows > .reveal { border-bottom: 1px solid #3b5545; }
 .capability-rows > .reveal:first-child { border-top: 1px solid #3b5545; }
 .capability-rows button { display: flex; gap: 21px; align-items: center; width: 100%; min-height: 91px; padding: 24px 0; border: 0; background: transparent; color: #a5b9ad; text-align: left; }
@@ -332,6 +337,7 @@ main { overflow: clip; }
   .section-label { font-size: 10px; margin-bottom: 23px; }
   .section-label > span:first-child { font-size: 9px; }
   .expertise-explorer { grid-template-columns: 1fr; gap: 30px; }
+  .expertise-explorer > .reveal { margin-top: 0; }
   .capability-rows button { padding-block: 21px; min-height: 84px; gap: 17px; }
   .capability-rows button strong { font-size: 21px; }
   .capability-rows button small { font-size: 12px; }
