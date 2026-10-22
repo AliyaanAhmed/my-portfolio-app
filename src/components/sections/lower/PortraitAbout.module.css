@@ -15,16 +15,24 @@
 .actions > a:hover svg { transform: translate(3px,-3px); }
 .portrait { position: relative; align-self: end; min-width: 0; display: flex; justify-content: center; }
 .portrait img { display: block; width: 100%; max-width: 420px; height: auto; object-fit: contain; }
+.mobileIntro,.mobileFocus { display: none; }
 @media(max-width: 899px) { .about { gap: 25px; min-height: 0; grid-template-columns: 1.4fr 1fr; } .copy h2 { font-size: 38px; } .copy h2.statement { font-size: 31px; } .copy > p { font-size: 16px; } .intro { font-size: 10px; } }
 @media(max-width: 700px) {
-  .about { position: relative; isolation: isolate; display: grid; grid-template-columns: 1fr; gap: 0; min-height: 470px; overflow: clip; }
-  .copy { position: relative; z-index: 1; padding: 44px 10px; align-self: center; }
-  .copy h2.statement { font-size: clamp(28px,7.4vw,38px); line-height: 1.45; color: #253c30; }
-  .byline { color: #65796b; font-size: 10px; margin-top: 24px; }
-  .actions { flex-direction: column; gap: 9px; margin-top: 20px; }
-  .actions > a { font-size: 12px; }
-  .location { font-size: 10px; }
-  .portrait { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; justify-self: stretch; align-self: stretch; z-index: 0; pointer-events: none; user-select: none; }
-  .portrait img { width: 100%; height: 100%; max-width: 370px; object-fit: contain; object-position: center bottom; opacity: .23; filter: grayscale(.4); mask-image: linear-gradient(transparent,black 12%,black 85%,transparent); }
+  .about { position: relative; isolation: isolate; display: grid; grid-template-columns: 1fr; gap: 0; min-height: 0; overflow: hidden; border: 1px solid #e0e8dd; border-radius: 20px; background: #e9efe3; }
+  .copy { position: relative; z-index: 1; width: 100%; max-width: 100%; padding: 230px 24px 25px; align-self: stretch; background: linear-gradient(transparent 145px,#fafaf7d9 220px,#fafaf7 300px); }
+  .mobileIntro { display: block; font-size: 8px; line-height: 1.7; letter-spacing: .12em; color: #728b79; margin-bottom: 15px; }
+  .copy h2.statement { font-size: clamp(25px,6.5vw,34px); line-height: 1.4; letter-spacing: -.035em; color: #253c30; }
+  .byline { color: #65806e; font-size: 11px; margin-top: 21px; gap: 12px; text-wrap: balance; }
+  .byline i { width: 30px; background: #b3c8b7; }
+  .mobileFocus { display: block; margin-top: 25px; padding-top: 21px; border-top: 1px solid #e1e8de; }
+  .focusChoices { display: flex; justify-content: center; gap: 7px; }
+  .focusChoices button { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 44px; padding: 10px 13px; border: 1px solid #d9e3d6; border-radius: 24px; background: transparent; color: #6e8274; font: 11px var(--font-body),sans-serif; }
+  .focusChoices button[aria-pressed='true'] { background: #2e5842; color: #fff; border-color: #2e5842; }
+  .focusDescription { min-height: 58px; max-width: 270px; margin: 14px auto 0; color: #718275; font-size: 12px; line-height: 1.8; text-wrap: balance; }
+  .actions { flex-direction: column; gap: 11px; margin-top: 18px; }
+  .actions > a { width: 100%; justify-content: center; min-height: 46px; font-size: 12px; border: 1px solid #d4e0d1; border-radius: 8px; background: #f0f4eb; }
+  .location { font-size: 10px; color: #85968a; }
+  .portrait { position: absolute; inset: 0 0 auto; width: 100%; height: 390px; max-width: none; justify-self: stretch; align-self: stretch; z-index: 0; pointer-events: none; user-select: none; }
+  .portrait img { width: 100%; height: 100%; max-width: 310px; object-fit: contain; object-position: center top; opacity: 1; filter: none; mask-image: linear-gradient(black 40%,transparent 100%); }
 }
 @media(prefers-reduced-motion:reduce) { .actions > a:hover svg { transform: none; } }
