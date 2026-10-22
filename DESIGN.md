@@ -8,6 +8,7 @@ Manrope display, Inter body, Geist Mono for technical annotations. Off-white sur
 
 ## Current decisions
 - The hero avatar is the focal visual and follows fine-pointer movement. Product logos form a stationary, four-column strip below it; avoid floating badges covering the portrait. Labels stay visible on touch devices. No tooltip dependency or decorative controls.
+- Avatar and toolkit occupy separate rows in normal flow, with a responsive image aspect ratio and explicit gap. The avatar does not translate vertically on scroll. Toolkit has a quiet surface without a divider crossing the shoes; hero bottom padding separates it from Expertise.
 - Expertise has topic-specific previews; How I Build uses animated process scenes; Experience uses expandable timeline rows; About uses a large statement beside the complete supplied portrait.
 - Expertise has three groups: Power Platform Solution & Automation, AI-assisted workflows, and Frontend Architecture & UI/UX. The frontend group offers architecture and prototype views. About's byline uses Power Platform Consultant. Alternative palettes are proposals only until selected by the user.
 - Expertise uses two top-aligned columns on desktop: heading and compact capability list on the left, preview aligned with the heading on the right. On mobile the preview follows the list. Avoid centering the short list against the taller preview.
