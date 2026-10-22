@@ -1,0 +1,16 @@
+# Portfolio design context
+
+## Audience and purpose
+Introduce Aliyaan's Power Apps consulting, software engineering, and AI integration work to prospective collaborators. Keep the page concise and easy to scan.
+
+## Established visual language
+Manrope display, Inter body, Geist Mono for technical annotations. Off-white surfaces, dark green expertise/contact sections, muted green accents. Runtime styling lives in `src/app/globals.css`, `src/app/landing.css`, and scoped section CSS modules. Reuse these owners and `ProductLogo` rather than introducing another theme or logo system.
+
+## Current decisions
+- The hero avatar is the focal visual and follows fine-pointer movement. Product logos form a stationary, four-column strip below it; avoid floating badges covering the portrait. Labels stay visible on touch devices. No tooltip dependency or decorative controls.
+- Expertise has topic-specific previews; How I Build uses animated process scenes; Experience uses expandable timeline rows; About uses a large statement beside the complete supplied portrait.
+- Power Apps Consultant is the current title. CNSAC Med uses Application Consultant; engineering roles use Software Engineer. CNSAC Med and Mech Connect are Germany-based; Mech Connect includes AI integration per the user's correction.
+- Preserve reduced-motion behavior, native scrolling, accessible disclosures, focus styles, and responsive gutters.
+
+## Verification boundary
+Production builds include TypeScript compilation. Existing browser tests contain historical selectors; do not report them as current verification without running and updating them when requested.

@@ -33,7 +33,12 @@ main { overflow: clip; }
 .hero-footnote > a { font-family: var(--font-body), sans-serif; font-size: 10px; }
 .hero-footnote > span:nth-child(2) { display: none; }
 .hero-signature { font-family: var(--font-display), sans-serif; font-size: 23px; }
-.avatar-stage { height: 590px; }
+.avatar-stage { height: 640px; }
+.hero-toolkit { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: min(360px,100%); padding-top: 16px; border-top: 1px solid #dce5dd; }
+.hero-toolkit-label { display: block; text-align: center; font-size: 8px; letter-spacing: .12em; color: #7b9082; }
+.hero-toolkit ul { list-style: none; padding: 0; margin: 17px 0 0; display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 8px; }
+.hero-toolkit li { display: flex; flex-direction: column; align-items: center; gap: 9px; min-width: 0; }
+.hero-toolkit li > span { font-size: 9px; color: #657b6d; text-align: center; white-space: nowrap; }
 .avatar-scene { width: 360px; height: 540px; margin-left: -180px; top: 10px; }
 .avatar-grid, .orbit-two, .stage-coordinate, .label-ai, .avatar-interaction { display: none; }
 .orbit-one { width: 370px; height: 370px; top: 100px; border: 0; background: #e6eee1; border-radius: 50%; transform: translateX(-50%); }
@@ -179,7 +184,7 @@ main { overflow: clip; }
   .hero-v2 h1 { font-size: 7.1vw; }
   .hero-layout { min-height: 550px; }
   .hero-eyebrow { font-size: 10px; }
-  .avatar-stage { height: 550px; }
+  .avatar-stage { height: 595px; }
   .avatar-scene { width: 330px; height: 495px; margin-left: -165px; }
   .orbit-one { width: 310px; height: 310px; }
   .orbit-label { font-size: 10px; padding: 8px 12px 8px 8px; }
@@ -211,7 +216,7 @@ main { overflow: clip; }
   .hero-actions { gap: 20px; }
   .hero-actions .button { min-height: 53px; padding-inline: 20px; }
   .hero-location { font-size: 11px; }
-  .avatar-stage { height: 485px; }
+  .avatar-stage { height: 535px; }
   .avatar-scene { width: 285px; height: 427px; margin-left: -142px; top: 18px; }
   .orbit-one { width: 270px; height: 270px; top: 95px; }
   .platform-icon { width: 26px; height: 26px; }
@@ -309,7 +314,7 @@ main { overflow: clip; }
   .hero-actions .button { padding: 13px 21px; font-size: 13px; }
   .hero-actions .text-link { font-size: 12px; }
   .hero-location { font-size: 11px; margin-top: 24px; }
-  .avatar-stage { height: 415px; max-width: 365px; }
+  .avatar-stage { height: 485px; max-width: 365px; }
   .avatar-scene { width: 265px; height: 397px; top: 0; margin-left: -132px; }
   .orbit-one { width: 265px; height: 265px; top: 65px; }
   .label-apps { top: 175px; left: 1px; }

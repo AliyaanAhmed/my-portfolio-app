@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { motion, useReducedMotion, useScroll, useSpring, useTransform } from 'motion/react';
-import { ArrowDownRight, MousePointer2, Sparkles } from 'lucide-react';
 import { profile } from '@/content/profile';
 import { ProductLogo } from '../ui/ProductLogo';
 
@@ -16,8 +15,6 @@ export function AvatarStage() {
   const rotateX = useTransform(pointerY, [-1, 1], [7, -7]);
   const rotateZ = useTransform(pointerX, [-1, 1], [-3, 3]);
   const bodyX = useTransform(pointerX, [-1, 1], [-5, 5]);
-  const badgeX = useTransform(pointerX, [-1, 1], [12, -12]);
-  const badgeY = useTransform(pointerY, [-1, 1], [8, -8]);
   const { scrollYProgress } = useScroll({ target: stage, offset: ['start start', 'end start'] });
   const y = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
@@ -45,11 +42,6 @@ export function AvatarStage() {
       <motion.div className="avatar-body" style={reduced ? { x: 0 } : { x: bodyX }} aria-hidden="true"><Image src={profile.avatar} width={1024} height={1536} alt="" priority sizes="(max-width: 600px) 300px, 400px" /></motion.div>
       <motion.div className="avatar-head" data-testid="avatar-head" style={reduced ? { rotateY: 0, rotateX: 0, rotateZ: 0 } : { rotateY, rotateX, rotateZ }} aria-hidden="true"><Image src={profile.avatar} width={1024} height={1536} alt="" priority sizes="(max-width: 600px) 300px, 400px" /></motion.div>
     </motion.div>
-    <motion.div className="orbit-label label-apps" style={reduced ? undefined : { x: badgeX, y: badgeY }}><span className="platform-icon"><ProductLogo name="Power Apps" size={25} /></span><span>Power Apps<small>Built around your work.</small></span><ArrowDownRight size={14} /></motion.div>
-    <motion.div className="orbit-label label-automate" style={reduced ? undefined : { x: bodyX, y: badgeY }}><span className="platform-icon blue"><ProductLogo name="Power Automate" size={25} /></span><span>Power Automate<small>Less repetition. More flow.</small></span></motion.div>
-    <motion.div className="orbit-label label-pages" style={reduced ? undefined : { x: bodyX, y: badgeY }}><span className="platform-icon blue"><ProductLogo name="Power Pages" size={25} /></span><span>Power Pages</span></motion.div>
-    <motion.div className="orbit-label label-react" style={reduced ? undefined : { x: badgeX, y: badgeY }}><span className="platform-icon react"><ProductLogo name="React" size={25} /></span><span>React</span></motion.div>
-    <motion.div className="orbit-label label-ai" style={reduced ? undefined : { x: badgeX }}><Sparkles size={17} /><span>AI, with purpose.</span><span className="status-dot" /></motion.div>
-    <span className="avatar-interaction"><MousePointer2 size={13} /> A little curious. Just like me.<span>MOVE YOUR CURSOR ↗</span></span>
+    <div className="hero-toolkit" aria-label="Core technologies"><span className="hero-toolkit-label">MY EVERYDAY TOOLKIT</span><ul>{(['Power Apps', 'Power Automate', 'Power Pages', 'React'] as const).map(name => <li key={name}><ProductLogo name={name} size={27} /><span>{name}</span></li>)}</ul></div>
   </div>;
 }
