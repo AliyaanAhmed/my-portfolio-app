@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useReducedMotion } from 'motion/react';
-import { ArrowUpRight, MapPin } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { AvatarStage } from './AvatarStage';
 import { Action } from '../ui';
 import { profile } from '@/content/profile';
@@ -15,7 +15,6 @@ export function HeroSection() {
       <motion.div initial={reduced ? false : { opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.25 }}>
         <p>Power Platform, React, and AI.<br />Thoughtful interfaces. Connected workflows.</p>
         <div className="hero-actions"><Action href="#work">See my work</Action><a className="text-link" href={profile.links.linkedin} target="_blank" rel="noopener noreferrer">Let’s connect <ArrowUpRight size={17} /></a></div>
-        <div className="hero-location"><MapPin size={13} /><span>Karachi, Pakistan</span></div>
       </motion.div>
     </div><AvatarStage /></div>
   </section>;
