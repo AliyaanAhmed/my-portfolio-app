@@ -1,26 +1,27 @@
-# Landing-page refinement — 22 October 2026
+# Interactive lower-page rebuild — 22 October 2026
 
-## Changes
-
-- Manrope headings and Inter body text replace the former Geist-only typography. Fonts load through `next/font`; technical labels retain Geist Mono.
-- The homepage uses a short introduction, capability selector, compact project gallery, workflow demo, expandable career rows, a short About introduction, and a single contact invitation.
-- Detailed project information stays on the three concept-study routes. Career dates and supplied history remain in local data and expandable disclosures.
-- `Reveal` now has actual hidden and visible states. Viewport entry animates opacity, translation, and scale; exit resets the state so the animation replays on return. Individual capability rows, project cards, career rows, portrait, content blocks, contact, and footer use it.
-- Keyboard focus reveals controls. Reduced-motion preferences bypass the transforms and hiding. A `noscript` fallback keeps content visible without JavaScript.
+The hero and “One toolkit. Connected thinking.” section are retained. Everything below them now uses `src/components/sections/lower/`, with scoped CSS Modules and one shared `SectionShell` for gutters, headings, and spacing. The old static gallery, workflow preview, career list, portrait section, and contact treatment were replaced; unused components were removed.
 
 ## Completed checks
 
-- `npm run lint`: passed, no warnings.
-- `npm run typecheck`: passed with strict TypeScript.
-- `npm run build`: passed; all project routes and metadata routes generated.
-- `npm run test:e2e`: **3 tests passed, 53.5 seconds**, against an isolated production server on port 3100.
+- `npm run lint`: passed without warnings.
+- `npm run typecheck`: passed with strict typing, including after obsolete component cleanup.
+- `npm run build`: passed, generating the homepage, all project routes, and metadata routes.
+- `npm run test:e2e`: **5 tests passed** in approximately one minute, against an isolated production server on port 3100.
+- `git diff --check`: passed.
 
-The scroll test confirms a project card is opacity 0 and marked hidden before entry, becomes opacity 1 after scrolling into view, hides after leaving, and becomes visible again on re-entry. It also verifies entry states for career rows and the portrait.
+## What was verified
 
-Responsive checks cover 390px, 768px, and 1440px widths with no document overflow. Workflow steps, Power Automate and AI capabilities, nested career disclosures, mobile menu focus containment and Escape, project routes, expected 404, avatar tracking, section-aware navigation, touch operation, reduced-motion visibility, skip navigation, keyboard activation, and the Karachi clock pass. Valid routes produced no unexpected console or page errors.
+1. **Project explorer:** review evidence expands; approve and request-changes update local status; reset works. Inquiry type, document acknowledgement, and summary preserve choices. Workspace search, status filtering, task completion, counts, and empty state work. The concept link opens the correct detail page.
+2. **Workflow simulation:** Run advances the request and AI-context stages, pauses at human review, and waits for approval or a request for changes. Both outcomes, stage inspection, Stop, and Reset pass. The simulation does not call a model or a business system.
+3. **Career/About/contact:** company selection updates actual supplied roles and dates, including intentional overlaps and the earlier operations chapter. Portrait/illustration and About/Education switches work. Topic selection updates the message, clipboard success shows “Copied,” and denied clipboard access shows a manual-copy fallback. The contact link is the real supplied LinkedIn URL.
+4. **Alignment and responsiveness:** section headings share the expertise section’s left edge within 2px at **390, 768, 1100, and 1440px**. No document overflow was detected. Workspace controls were exercised at every width. All three project routes and return links pass. Valid routes produced no unexpected console or page errors.
+5. **Access and motion:** hidden/visible scroll states replay on re-entry; project tabs respond to arrow keys with roving focus; reduced motion leaves content visible without transforms; skip navigation and the Karachi clock work; touch navigation and approval controls pass.
 
-## Visual inspection
+## Visual review
 
-Reviewed desktop hero and new gallery, mobile whole-page composition, dark expertise selector, portrait/About section, and responsive spacing. Current captures include `hero-*`, `work-*`, `workflow-*`, `journey-*`, `expertise-*`, `about-*`, and `contact-*` at the three tested widths. `scroll-work-visible.png` captures a revealed project. Full-page `home-*` images use reduced motion to show all offscreen content in a single static layout capture; live scroll entry is tested separately. Older `chapter-*` captures belong to the earlier design.
+Reviewed Work on desktop and mobile, the workflow graph at tablet width, the aligned employer selector and role panel, the portrait/About layout, and the mobile contact brief builder. Current `work-*`, `workflow-*`, `journey-*`, `about-*`, `contact-*`, and `home-*` captures include the tested widths. Full-page captures use reduced motion so offscreen sections are visible in one static image. Earlier `chapter-*` images belong to the previous design.
 
-No Lighthouse score was measured. Browser checks use Chromium and touch emulation, not physical devices or Safari/Firefox. No external business system or contact delivery endpoint is connected. The final domain remains unconfigured; canonical URLs are omitted and the sitemap is empty. Next.js emits its expected localhost social-image fallback warning until that domain is set.
+All projects remain visibly identified as concept demonstrations with synthetic data. No client deployments, business outcomes, real AI processing, or message delivery are implied by these local demos.
+
+No Lighthouse score was measured. Chromium and touch emulation were checked; physical devices and Safari/Firefox were not. The final domain is still unset, so canonical links are omitted and the sitemap is empty. Next.js emits its expected localhost social-image fallback warning until a domain is configured.
