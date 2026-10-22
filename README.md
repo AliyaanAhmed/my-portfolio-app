@@ -31,18 +31,18 @@ No API keys, database, CMS, or external account is needed. Initial font compilat
 - `src/components/sections/lower/`: the rebuilt lower page and its self-contained interactive components.
 - `src/components/sections/lower/LowerSections.module.css`: scoped layouts and responsive styling for Work, Workflow, Journey, About, and Contact. `SectionShell` gives every section the same gutters, heading alignment, and spacing.
 
-Static section shells and project pages are Server Components. Small Client Components provide the avatar, project experiments, workflow simulation, capability and employer selectors, portrait/education controls, contact brief builder, reveals, and local clock. Native `details` provides role expansion. Scrolling stays native. Motion is the only animation library.
+Static section shells, About, and project pages are Server Components. Small Client Components provide the avatar, animated process stories, capability and employer selectors, contact brief builder, reveals, and local clock. Native `details` provides education and role expansion. Scrolling stays native. Motion is the only animation library.
 
 ## Motion and personal artwork
 
 The original supplied files are preserved as `public/images/FormalDress.png` and `public/images/Avatar.png`. `next/image` serves optimized versions with transparency. The formal portrait appears in About; the illustrated avatar is the hero centerpiece. Navigation uses a simple AA monogram and name.
 
 - `AvatarStage.tsx` creates head/body layers using CSS clipping of the same PNG, then spring-driven perspective rotations track the pointer. This is a 2.5D illustration effect, not a rigged 3D character. Fine pointer devices receive the interaction; touch devices keep a stable avatar. There is no image synthesis or modification of the source PNG.
-- `WorkExplorer.tsx` switches between three **working local concept interfaces**: review evidence and approve or request changes; step through a guided inquiry; search, filter, and complete synthetic work items. Each view links to its corresponding detail page. These demos do not connect to real systems, and the inquiry never submits information.
+- `ProcessStories.tsx` replaces the two former work/demo panels with three automatically advancing visual concepts: connected architecture, AI suggestions with human review, and role-based enterprise/government approvals. Each has four clearly labeled stages, viewport-aware playback, and a pause control. Reduced motion shows a static final overview. These are explanatory animations, with no live AI, authorization, or business connections.
 - `SiteHeader.tsx` compacts into a floating pill, tracks the current section, animates the active navigation link, and adapts to dark sections. It also shows page progress.
-- `AutomationStudio.tsx` runs a timed illustrative sequence, pauses at human review, and requires an explicit approval/change decision before showing its outcome. Stop and reset controls are functional; timers clean up when stopped or unmounted. AI context is illustrative, not an actual model call.
 - `ExperienceExplorer.tsx` selects employers and reveals their supplied roles and dates; the operations chapter is explicitly separate.
-- `AboutPanel.tsx` switches between the supplied portrait and illustration, and between the personal introduction and education.
+- `AboutPanel.tsx` uses an open editorial layout with short personal copy and the entire supplied portrait, without cropping. Education is available in native expandable content.
+- `ProductLogo.tsx` serves Microsoft's official product artwork in diagrams and product labels. Asset attribution and Code Apps logo mapping are documented in `public/logos/SOURCES.md`.
 - `ContactPanel.tsx` builds a short message from a selected topic, copies it only after clipboard access succeeds, and provides a manual-copy fallback if access fails. The actual contact action opens the supplied LinkedIn URL. Nothing is automatically sent.
 - `Reveal.tsx` now starts content hidden, reveals it with translation and opacity when at least 12% enters the viewport (with a 48px bottom inset), and replays when it leaves and re-enters. Headings, project cards, individual capabilities, career rows, the About portrait and copy, contact, and footer use it. Focus reveals keyboard targets. A `noscript` fallback keeps content visible without JavaScript.
 - Reduced-motion mode resets transforms and word opacity, disables pointer tracking and continuous animation, and uses native instant anchor scrolling. CSS covers the initial hydration interval as well as runtime preference changes.
@@ -51,7 +51,7 @@ Tune the new lower-section layouts in `LowerSections.module.css`, the hero/exper
 
 ## Project material
 
-All three stories are **concept demonstrations**, using fictional organizations and synthetic data. The homepage concepts now have working local interactions; the detail-page illustrations remain noninteractive HTML/CSS previews. Neither represents a deployed business application or a completed client engagement, and no business outcome is claimed.
+The homepage process animations are **illustrative concepts** explaining expertise. The three retained detail-page stories use fictional organizations and synthetic data with HTML/CSS previews. Neither represents a deployed business application or a completed client engagement, and no business outcome is claimed.
 
 To replace a concept with approved work:
 
@@ -91,6 +91,6 @@ npm run test:e2e
 
 If using an already installed Chromium, set `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` to its executable before running tests. Playwright starts the built production app on port **3100**, isolated from a development preview on port 3000, and tears it down afterward. Rebuild after source changes before rerunning tests. On restricted Windows environments, browser and build workers may require process-launch permission.
 
-Browser tests cover real project controls, timed workflow/human decisions, employer and role content, portrait and education switches, clipboard success/failure, heading alignment and overflow at 390px/768px/1100px/1440px, project routes, tab keyboard behavior, touch navigation, scroll-reveal replay, reduced motion, clock, and runtime errors. Live screenshots capture individual sections; full-page layout captures use reduced motion so offscreen content is visible in one image. See `artifacts/verification.md` for results and limits. Lighthouse scores have not been measured.
+The existing browser suite and screenshots document the previous interactive-demo layout. Their work-panel and About-switch selectors need revision for the current process-story design; they were not run for this revision. The updated source passes the production build, including TypeScript compilation. See `artifacts/verification.md` for historical results and limits. Lighthouse scores have not been measured.
 
 Official setup references consulted: [Next.js](https://nextjs.org/docs/app/getting-started/installation), [Tailwind CSS](https://tailwindcss.com/docs/installation/framework-guides/nextjs), and [Motion](https://motion.dev/docs/react-installation).

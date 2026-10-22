@@ -1,0 +1,25 @@
+.about { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(0,1fr); align-items: center; gap: 50px; min-height: 570px; }
+.copy { padding-block: 35px; }
+.intro { font-size: 10px; letter-spacing: .13em; color: #6a8172; }
+.copy h2 { font-family: var(--font-display),sans-serif; font-size: clamp(38px,4.4vw,61px); font-weight: 500; letter-spacing: -.055em; line-height: 1.2; color: #253c30; margin-top: 24px; }
+.copy h2 em { font-style: normal; color: #55846b; }
+.copy > p { font-size: 15px; color: #718276; line-height: 1.9; margin-top: 24px; }
+.location { display: flex; align-items: center; gap: 7px; color: #85978b; font-size: 10px; margin-top: 23px; }
+.copy > a { display: inline-flex; align-items: center; gap: 30px; color: #365e46; font-size: 13px; margin-top: 28px; min-height: 44px; border-bottom: 1px solid #b9cdbd; }
+.copy > a svg { transition: transform .2s; }
+.copy > a:hover svg { transform: translate(3px,-3px); }
+.portrait { position: relative; align-self: end; min-width: 0; display: flex; justify-content: center; }
+.portrait img { display: block; width: 100%; max-width: 420px; height: auto; object-fit: contain; }
+.signature { position: absolute; right: 0; bottom: 14px; color: #7b9582; font: italic 22px var(--font-display),sans-serif; letter-spacing: -.05em; transform: rotate(-7deg); }
+.signature > span { margin-left: 7px; color: #285e42; }
+.education { margin-top: 27px; border-top: 1px solid #dce5dd; max-width: 320px; }
+.education summary { display: flex; align-items: center; justify-content: space-between; min-height: 46px; cursor: pointer; list-style: none; font-size: 11px; color: #7b8c80; }
+.education summary::-webkit-details-marker { display: none; }
+.education[open] summary svg { transform: rotate(45deg); }
+.education > div { padding-bottom: 10px; }
+.education p { font-size: 11px; line-height: 1.7; margin: 0 0 14px; }
+.education strong { display: block; color: #46644f; font-weight: 500; }
+.education p span { display: block; color: #89978c; }
+@media(max-width: 899px) { .about { gap: 25px; min-height: 0; } .copy h2 { font-size: 40px; } .copy > p { font-size: 13px; } }
+@media(max-width: 700px) { .about { grid-template-columns: 1fr; gap: 12px; } .copy { padding-block: 20px; } .copy h2 { font-size: clamp(39px,8vw,53px); } .copy > p { font-size: 14px; } .portrait { width: min(380px,100%); justify-self: center; } .signature { right: 5px; } }
+@media(prefers-reduced-motion:reduce) { .copy > a:hover svg { transform: none; } }
