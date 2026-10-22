@@ -1,6 +1,6 @@
 # Aliyaan Ahmed — Portfolio
 
-A complete editorial portfolio for Syed Aliyaan Ahmed, built locally with Next.js App Router, React, strict TypeScript, Tailwind CSS 4, custom CSS, Motion for React, Lucide, and Geist via `next/font`.
+A concise portfolio for Syed Aliyaan Ahmed, built with Next.js App Router, React, strict TypeScript, Tailwind CSS 4, Motion for React, and Lucide. Manrope headings and Inter body text load through `next/font`; Geist Mono is reserved for small technical annotations.
 
 ## Run
 
@@ -26,7 +26,8 @@ No API keys, database, CMS, or external account is needed. Initial font compilat
 - `src/content/experience.ts`: employer groups, editable role dates, descriptions, and current role. Supplied overlaps are intentional. Esports is a separate earlier operations chapter.
 - `src/content/projects.ts`: three project stories, slugs, provenance, walkthroughs, constraints, and next steps.
 - `src/content/expertise.ts`: five capability previews, led by Power Platform, Power Automate, and AI-assisted workflows.
-- `src/app/globals.css`: CSS custom properties, typography, responsive layouts, and reduced-motion rules. Tailwind uses its current PostCSS plugin and CSS import.
+- `src/app/globals.css`: shared tokens, interface illustrations, case-study layouts, and responsive foundations.
+- `src/app/landing.css`: the cleaner landing-page typography, compact gallery, expandable career list, and responsive component styling.
 
 Static homepage content and project pages are Server Components. Client boundaries cover the avatar, scroll-linked project scenes, section-aware navigation, workflow controls, capability selection, content reveals, portrait parallax, and the local clock. Native `details` provides keyboard-accessible role expansion. Scrolling stays native. Motion is the only animation library.
 
@@ -35,13 +36,13 @@ Static homepage content and project pages are Server Components. Client boundari
 The original supplied files are preserved as `public/images/FormalDress.png` and `public/images/Avatar.png`. `next/image` serves optimized versions with transparency. The formal portrait appears in About and the navigation identity; the illustrated avatar is the hero centerpiece.
 
 - `AvatarStage.tsx` creates head/body layers using CSS clipping of the same PNG, then spring-driven perspective rotations track the pointer. This is a 2.5D illustration effect, not a rigged 3D character. Fine pointer devices receive the interaction; touch devices keep a stable avatar. There is no image synthesis or modification of the source PNG.
-- `ProjectChapter.tsx` maps section scroll progress to scene translation, rotation, and scale; normal document scrolling stays available.
+- `ProjectChapter.tsx` presents three concise concept cards, including a wide workspace card. Scene movement follows scroll position; the detailed stories remain on the project routes.
 - `SiteHeader.tsx` compacts into a floating pill, tracks the current section, animates the active navigation link, and adapts to dark sections. It also shows page progress.
-- `ScrollStatement.tsx`, `AboutPortrait.tsx`, and `WorkingApproach.tsx` provide scroll-linked word emphasis, portrait movement, and a continuous process line.
-- `Reveal.tsx` adds entrance translation, opacity, and a short focus transition as content enters view.
+- `AboutPortrait.tsx` retains restrained portrait movement. The homepage removes the long process and quotation sections, and keeps education and role detail behind disclosures.
+- `Reveal.tsx` now starts content hidden, reveals it with translation and opacity when at least 12% enters the viewport (with a 48px bottom inset), and replays when it leaves and re-enters. Headings, project cards, individual capabilities, career rows, the About portrait and copy, contact, and footer use it. Focus reveals keyboard targets. A `noscript` fallback keeps content visible without JavaScript.
 - Reduced-motion mode resets transforms and word opacity, disables pointer tracking and continuous animation, and uses native instant anchor scrolling. CSS covers the initial hydration interval as well as runtime preference changes.
 
-Tune strengths and durations in these small components, and layout/theme tokens in `globals.css`. A true independently turning 3D head would require a 3D asset or additional directional artwork.
+Tune strengths and durations in these components, shared tokens in `globals.css`, and the current landing-page design in `landing.css`. A true independently turning 3D head would require a 3D asset or additional directional artwork.
 
 ## Project material
 
@@ -85,6 +86,6 @@ npm run test:e2e
 
 If using an already installed Chromium, set `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` to its executable before running tests. Playwright starts the built production app on port **3100**, isolated from a development preview on port 3000, and tears it down afterward. Rebuild after source changes before rerunning tests. On restricted Windows environments, browser and build workers may require process-launch permission.
 
-Browser tests cover 390px, 768px, and 1440px widths, overflow, workflow steps, capability updates, role expansion, mobile focus containment and Escape, anchors, project pages, 404, the local clock, reduced motion, keyboard activation, pointer response, scroll parallax, active navigation, dark section theme changes, and runtime errors. Screenshots are saved in `artifacts/` for visual review. See `artifacts/verification.md` for the actual completed checks and limitations. Lighthouse scores have not been measured.
+Browser tests cover actual hidden/visible scroll states and replay, 390px/768px/1440px layouts, overflow, workflow controls, capability changes, career disclosures, menu focus containment and Escape, project routes, 404, clock, reduced motion, keyboard access, pointer response, active navigation, touch, and runtime errors. Live screenshots capture individual sections; full-page layout captures use reduced motion so offscreen content is visible in a single image. See `artifacts/verification.md` for results and limits. Lighthouse scores have not been measured.
 
 Official setup references consulted: [Next.js](https://nextjs.org/docs/app/getting-started/installation), [Tailwind CSS](https://tailwindcss.com/docs/installation/framework-guides/nextjs), and [Motion](https://motion.dev/docs/react-installation).

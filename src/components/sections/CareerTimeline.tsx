@@ -1,3 +1,10 @@
 import { Plus } from 'lucide-react';
 import { experience } from '@/content/experience';
-export function CareerTimeline() { return <div className="career-timeline">{experience.map((employer,i)=><div className={`employer ${i===3?'earlier-chapter':''}`} key={employer.name}><div className="employer-info"><span className="timeline-dot"/><span className="eyebrow">{employer.type}</span><h3>{employer.name}</h3><p>{employer.location}</p></div><div className="employer-roles">{employer.roles.map(role=><details key={role.title} open={role.current}><summary><span><strong>{role.title}</strong><span className="role-date">{role.dates}{role.current&&<span className="current-role">CURRENT</span>}</span></span><Plus size={18}/></summary><div className="role-description"><p>{role.description}</p>{role.current&&<div className="tags"><span>React / TS</span><span>Code Apps</span><span>Power Pages</span><span>AI integration</span></div>}</div></details>)}</div></div>)}</div>; }
+import { Reveal } from '../motion/Reveal';
+
+const chapters = ['Power Platform & frontend', 'Frontend development · Contract', 'Frontend development', 'Earlier chapter · Operations'];
+const initials = ['D', 'M', 'S', 'NG'];
+
+export function CareerTimeline() {
+  return <div className="career-list">{experience.map((employer, i) => <Reveal key={employer.name} delay={i * 0.04}><details className="career-company"><summary><span className="company-mark">{initials[i]}</span><span className="company-name"><strong>{employer.name}</strong><small>{chapters[i]}</small></span><span className="company-years">{i === 0 ? '2024 — Present' : i === 1 ? '2024' : i === 2 ? '2023 — 2024' : '2020 — 2023'}</span><Plus size={20} /></summary><div className="company-details"><p>{employer.location}</p>{employer.roles.map(role => <details className="career-role" key={role.title}><summary><span><strong>{role.current ? 'Power Platform Consultant' : role.title}</strong><span className="role-date">{role.dates}</span></span><Plus size={16} /></summary><p>{role.current ? `${role.title}. ${role.description}` : role.description}</p></details>)}</div></details></Reveal>)}</div>;
+}
