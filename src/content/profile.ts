@@ -2,7 +2,11 @@ export const profile = {
   name: 'Syed Aliyaan Ahmed', displayName: 'Aliyaan Ahmed', location: 'Karachi, Pakistan',
   positioning: 'Power Apps Consultant · Software Engineer',
   bio: 'Syed Aliyaan Ahmed builds enterprise applications with Power Apps, Power Pages, React, and AI, connecting clear interfaces with automated workflows.',
-  links: { linkedin: 'https://www.linkedin.com/in/aliyaanahmed', email: null as string | null, github: null as string | null, resume: null as string | null },
+  links: {
+    linkedin: 'https://www.linkedin.com/in/aliyaanahmed',
+    linkedinMessage: 'https://www.linkedin.com/messaging/compose/?profileUrn=urn%3Ali%3Afsd_profile%3AACoAADCPvC4BWrk9PzGdE0cdiOlFuho3f4WrfHQ&recipient=ACoAADCPvC4BWrk9PzGdE0cdiOlFuho3f4WrfHQ&screenContext=NON_SELF_PROFILE_VIEW&interop=msgOverlay',
+    email: null as string | null, github: null as string | null, resume: null as string | null,
+  },
   portrait: '/images/FormalDress.png' as string | null,
   avatar: '/images/Avatar.png',
 };

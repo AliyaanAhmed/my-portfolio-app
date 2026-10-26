@@ -63,7 +63,7 @@ export function HeroShowcase() {
     </div>
     <div className={s.stage}>
       <div className={s.window} id="hero-showcase-panel" role="tabpanel" aria-labelledby={`hero-tab-${active}`} tabIndex={0}>
-        <div className={s.windowBar}><span className={s.windowDots} aria-hidden="true"><i /><i /><i /></span><span>{current.label} preview</span><span className={s.example}>Interactive concept</span></div>
+        <div className={s.windowBar}><span className={s.windowDots} aria-hidden="true"><i /><i /><i /></span><span>{current.label} preview</span>{active === 0 && <span className={s.windowLogos} role="img" aria-label="Power Apps and React"><ProductLogo name="Power Apps" size={17} /><ProductLogo name="React" size={17} /></span>}<span className={s.example}>Interactive concept</span></div>
         <div className={s.windowBody}>
           <div className={s.rail} aria-hidden="true"><span><Home size={17} /></span><Layers size={17} /><LayoutGrid size={17} /><Database size={17} /><ShieldCheck size={17} /></div>
           <div className={s.canvas}>
@@ -86,7 +86,7 @@ export function HeroShowcase() {
           </div>
         </div>
       </div>
-      <div className={s.productBadge}><ProductLogo name={current.product} size={24} /><span>{current.product === 'Azure Document Intelligence' ? 'Document Intelligence' : current.product === 'React' ? 'React + TSX' : current.product}</span></div>
+      <div className={s.productBadge}><div className={s.badgeLogos}>{active === 0 && <ProductLogo name="Power Apps" size={24} />}<ProductLogo name={current.product} size={24} /></div><span>{current.product === 'Azure Document Intelligence' ? 'Document Intelligence' : current.product === 'React' ? 'Power Apps + React' : current.product}</span></div>
       <div className={s.codeCard}><div><Code2 size={14} /><span>{current.technology}</span><span className={s.codeLabel}>Example</span></div><pre><code>{current.code}</code></pre><span><i aria-hidden="true" />Built to connect.</span></div>
     </div>
     <div className={s.footer}><p>{current.caption}</p><button type="button" onClick={() => select((active + 1) % views.length)} aria-label={`Show ${views[(active + 1) % views.length].label} preview`}><ArrowRight size={18} /></button><span className={s.pagination} aria-live="polite"><b>0{active + 1}</b> / 03</span></div>
