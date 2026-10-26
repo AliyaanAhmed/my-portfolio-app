@@ -15,6 +15,7 @@ Manrope display, Inter body, Geist Mono for technical annotations. Off-white sur
 - Power Apps Consultant is the current title. CNSAC Med uses Application Consultant; engineering roles use Software Engineer. CNSAC Med and Mech Connect are Germany-based; Mech Connect includes AI integration per the user's correction.
 - Preserve reduced-motion behavior, native scrolling, accessible disclosures, focus styles, and responsive gutters.
 - Scroll reveals run once by default and stay visible after entry. Section headings fade without translation or scaling; other reveals use at most 24px of movement. Avoid exit animations tied to viewport edges, which make headings jump back into view while scrolling away.
+- Keep the hero compact: desktop preview uses tighter content spacing and a horizontal code strip beneath its window, rather than reserving a large area for an overlapping code card. Panel heights are determined by shared content, without arbitrary minimum canvas heights; all information and interaction states remain available.
 - About uses centered, balanced statement typography with a centered byline and actions beside the portrait. Education is omitted from this section at the user's request.
 - Mobile About uses one editorial portrait panel: visible face at the top, a fade into centered readable copy, three focus buttons with a short explanation, and a LinkedIn action. The image remains behind the panel rather than forming a second row.
 
