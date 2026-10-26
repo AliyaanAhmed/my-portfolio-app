@@ -35,9 +35,9 @@ Static section shells, About, and project pages are Server Components. Small Cli
 
 ## Motion and personal artwork
 
-The original supplied files are preserved as `public/images/FormalDress.png` and `public/images/Avatar.png`. The formal portrait appears in About. The hero is a centered introduction with no avatar or toolkit; Expertise provides the technology exploration without a repeated hero panel. Navigation uses a simple AA monogram and name.
+The original supplied files are preserved as `public/images/FormalDress.png` and `public/images/Avatar.png`. The formal portrait appears in About. The hero pairs a large introduction with a reference-inspired application showcase; mobile centers the introduction above a compact interactive preview. Navigation uses a simple AA monogram and name.
 
-- Hero styling is isolated in `HeroSection.module.css`, with heading entrance motion and reduced-motion support. Its centered layout emphasizes positioning and enterprise experience before visitors reach the interactive Expertise section.
+- Hero styling is isolated in `HeroSection.module.css` and `HeroShowcase.module.css`, with reduced-motion support. `HeroShowcase` provides accessible Applications, Automation, and AI experiences tabs, selectable modules, a finite approval sequence, and a simulated document-analysis action. Panels share a grid footprint to prevent height changes on tab selection. These are labeled examples without backend or AI service connections.
 - `ProcessStories.tsx` replaces the two former work/demo panels with three automatically advancing visual concepts: connected architecture, AI suggestions with human review, and role-based enterprise/government approvals. Each has four clearly labeled stages, viewport-aware playback, and a pause control. Reduced motion shows a static final overview. These are explanatory animations, with no live AI, authorization, or business connections.
 - `SiteHeader.tsx` compacts into a floating pill, tracks the current section, animates the active navigation link, and adapts to dark sections. It also shows page progress.
 - `ExperienceExplorer.tsx` presents a distinct vertical career timeline, with native expandable employer rows and supplied role dates.
