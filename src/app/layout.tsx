@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Inter, Manrope, Geist_Mono } from 'next/font/google';
 import { SiteHeader } from '@/components/layout/SiteHeader';
 import { SignatureFooter } from '@/components/layout/SignatureFooter';
@@ -24,5 +25,13 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en" className={`${sans.variable} ${display.variable} ${mono.variable}`}><body id="top"><a className="skip-link" href="#main-content">Skip to content</a><noscript><style>{`.reveal, #home [style] { opacity: 1 !important; transform: none !important; }`}</style></noscript><SiteHeader />{children}<SignatureFooter /></body></html>;
+  return <html lang="en" className={`${sans.variable} ${display.variable} ${mono.variable}`}><body id="top"><a className="skip-link" href="#main-content">Skip to content</a><noscript><style>{`.reveal, #home [style] { opacity: 1 !important; transform: none !important; }`}</style></noscript><SiteHeader />{children}<SignatureFooter />
+    <Script src="https://www.googletagmanager.com/gtag/js?id=G-JD2YM9DZCN" strategy="afterInteractive" />
+    <Script id="google-analytics" strategy="afterInteractive">{`
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JD2YM9DZCN');
+    `}</Script>
+  </body></html>;
 }
