@@ -1,24 +1,24 @@
-.hero { padding: 122px 0 65px; background: var(--bg); overflow: clip; }
-.layout { width: min(1180px,calc(100% - 120px)); margin-inline: auto; display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,1fr); gap: 65px; align-items: center; }
-.introduction { min-width: 0; padding-block: 24px; }
-.identity { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; color: #698174; font: 9px/1.7 var(--font-body),sans-serif; letter-spacing: .06em; margin-bottom: 24px; }
+.hero { padding: 150px 0 94px; background: var(--bg); overflow: clip; }
+.layout { width: min(980px,calc(100% - 120px)); margin-inline: auto; }
+.introduction { min-width: 0; padding-block: 24px; text-align: center; }
+.identity { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 9px; color: #698174; font: 10px/1.7 var(--font-body),sans-serif; letter-spacing: .08em; margin-bottom: 30px; }
 .identity > span { width: 5px; height: 5px; border-radius: 50%; background: #57816c; flex-shrink: 0; }
 .identity > b { font-weight: inherit; }
 .identity > i { width: 17px; height: 1px; background: #b3c4b8; }
-.introduction h1 { font-family: var(--font-display),sans-serif; font-size: clamp(48px,5.7vw,77px); line-height: 1.08; font-weight: 500; letter-spacing: -.06em; margin: 0 0 0 -3px; }
+.introduction h1 { font-family: var(--font-display),sans-serif; font-size: clamp(64px,7.5vw,104px); line-height: 1.06; font-weight: 500; letter-spacing: -.06em; margin: 0; }
 .line { display: block; overflow: hidden; padding-bottom: .08em; }
 .line > span { display: block; }
 .accent { color: #58846d; }
 .mobileHeadline { display: none; }
-.description { font-size: 16px; line-height: 1.85; color: #6d8073; margin-top: 22px; max-width: 440px; }
-.actions { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; margin-top: 27px; }
+.description { font-size: 18px; line-height: 1.8; color: #6d8073; margin: 24px auto 0; max-width: 560px; text-wrap: balance; }
+.actions { display: flex; align-items: center; justify-content: center; gap: 28px; flex-wrap: wrap; margin-top: 30px; }
 .primary,.secondary { display: inline-flex; align-items: center; justify-content: center; gap: 25px; min-height: 48px; font-size: 12px; }
 .primary { background: #234d3c; color: #fff; border-radius: 8px; padding: 13px 20px; transition: background .2s; }
 .primary:hover { background: #34654f; }
 .secondary { color: #365c47; gap: 12px; }
 .secondary svg { transition: transform .2s; }
 .secondary:hover svg { transform: translate(2px,-2px); }
-@media(max-width: 1150px) { .layout { width: calc(100% - 80px); gap: 35px; } .introduction h1 { font-size: clamp(43px,5.7vw,65px); } .identity { font-size: 8px; } .description { font-size: 15px; } }
-@media(max-width: 899px) { .layout { width: calc(100% - 64px); gap: 25px; } .introduction h1 { font-size: 4.9vw; } .identity > i { display: none; } .identity { max-width: 250px; } .actions { gap: 18px; } .primary { padding-inline: 15px; gap: 15px; } }
+@media(max-width: 1150px) { .layout { width: calc(100% - 80px); } .introduction h1 { font-size: clamp(60px,8vw,88px); } .description { font-size: 17px; } }
+@media(max-width: 899px) { .hero { padding: 125px 0 70px; } .layout { width: calc(100% - 64px); } .introduction h1 { font-size: 8.5vw; } .actions { gap: 22px; } }
 @media(max-width: 759px) { .hero { padding: 100px 0 42px; } .layout { width: calc(100% - 40px); grid-template-columns: 1fr; gap: 30px; } .introduction { padding: 0; text-align: center; } .identity { max-width: none; justify-content: center; margin-bottom: 19px; font-size: 9px; } .identity > b,.identity > span { display: none; } .identity:before,.identity:after { content: ''; width: 24px; height: 1px; background: #92ac9a; } .desktopHeadline { display: none; } .mobileHeadline,.mobileHeadline > span { display: block; } .introduction h1 { font-size: clamp(30px,8.7vw,51px); font-weight: 600; letter-spacing: -.045em; line-height: 1.16; margin: 0; } .description { max-width: 390px; font-size: 14px; line-height: 1.75; margin: 18px auto 0; text-wrap: balance; } .actions { justify-content: center; gap: 23px; margin-top: 22px; } .primary { border-radius: 26px; padding-inline: 20px; } }
 @media(prefers-reduced-motion:reduce) { .line > span { transform: none !important; } .hero * { transition: none !important; } }

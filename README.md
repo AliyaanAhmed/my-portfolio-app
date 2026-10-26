@@ -35,9 +35,9 @@ Static section shells, About, and project pages are Server Components. Small Cli
 
 ## Motion and personal artwork
 
-The original supplied files are preserved as `public/images/FormalDress.png` and `public/images/Avatar.png`. The formal portrait appears in About. The hero no longer renders the avatar; it uses an interactive technology toolkit on the right at desktop widths and below the introduction on mobile. Navigation uses a simple AA monogram and name.
+The original supplied files are preserved as `public/images/FormalDress.png` and `public/images/Avatar.png`. The formal portrait appears in About. The hero is a centered introduction with no avatar or toolkit; Expertise provides the technology exploration without a repeated hero panel. Navigation uses a simple AA monogram and name.
 
-- `HeroToolkit.tsx` provides seven selectable technologies, a concise usage explanation, and animated illustrative integration paths. It uses native buttons, visible selection and focus states, a pause control, viewport-aware animation, and reduced-motion support. No live systems are connected. Hero styling is isolated in `HeroSection.module.css` and `HeroToolkit.module.css`.
+- Hero styling is isolated in `HeroSection.module.css`, with heading entrance motion and reduced-motion support. Its centered layout emphasizes positioning and enterprise experience before visitors reach the interactive Expertise section.
 - `ProcessStories.tsx` replaces the two former work/demo panels with three automatically advancing visual concepts: connected architecture, AI suggestions with human review, and role-based enterprise/government approvals. Each has four clearly labeled stages, viewport-aware playback, and a pause control. Reduced motion shows a static final overview. These are explanatory animations, with no live AI, authorization, or business connections.
 - `SiteHeader.tsx` compacts into a floating pill, tracks the current section, animates the active navigation link, and adapts to dark sections. It also shows page progress.
 - `ExperienceExplorer.tsx` presents a distinct vertical career timeline, with native expandable employer rows and supplied role dates.
@@ -70,7 +70,7 @@ Each `/work/[slug]` route is statically generated. Unknown slugs return the cust
 - Resume: put the real PDF in `public/resume/` and set `profile.links.resume`. A control appears in Contact only when configured.
 - Email: set `profile.links.email` to the real address to enable a mail action.
 - GitHub: reserved as nullable configuration; add a public link only once supplied.
-- Domain: set `NEXT_PUBLIC_SITE_URL=https://your-confirmed-domain` in `.env.local` locally or in deployment environment variables, then rebuild. This enables real canonical URLs, absolute sitemap entries, and the sitemap reference in robots. Until then, the sitemap is empty and no canonical domain is invented. Next.js may warn that social image resolution falls back to localhost during local builds.
+- Domain: the confirmed default origin is `https://www.aliyaanahmed.site`. `NEXT_PUBLIC_SITE_URL` can override it for a deliberate domain change. Page-specific canonicals, sitemap URLs, structured-data URLs, and social previews use this origin. Set `GOOGLE_SITE_VERIFICATION` to the optional Search Console HTML-tag token when supplied. See `SEO.md` for deployment and indexing steps.
 
 The LinkedIn URL is the supplied real contact method. Email, phone, resume, approved client assets, and GitHub URL remain unconfigured. Personal content comes from the supplied brief and follow-up positioning. Reference screenshots informed the later visual revamp; no claims, project facts, contact details, or testimonial content were copied from them.
 

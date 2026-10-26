@@ -1,5 +1,5 @@
 import { ImageResponse } from 'next/og';
-export const alt='Aliyaan Ahmed — Complex work. Made simple.';
+export const alt='Syed Aliyaan Ahmed — Power Platform Consultant and Software Engineer';
 export const size={width:1200,height:630};
 export const contentType='image/png';
 export default function Image(){return new ImageResponse(<div style={{display:'flex',flexDirection:'column',justifyContent:'space-between',width:'100%',height:'100%',background:'#FAFAF7',padding:70,color:'#172323',fontFamily:'sans-serif'}}><div style={{display:'flex',justifyContent:'space-between',fontSize:24}}><span>AA. / Aliyaan Ahmed</span><span style={{color:'#0F766E'}}>POWER PLATFORM · AUTOMATION · AI</span></div><div style={{display:'flex',flexDirection:'column',fontSize:76,letterSpacing:-4,lineHeight:1.1}}><span>Complex work.</span><span style={{color:'#0F766E'}}>Made simple.</span></div><div style={{display:'flex',justifyContent:'space-between',fontSize:21,borderTop:'1px solid #DDE4DF',paddingTop:24}}><span>Applications. Automations. A human perspective.</span><span>Karachi, Pakistan ↗</span></div></div>,size);}
