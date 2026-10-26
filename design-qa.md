@@ -11,5 +11,6 @@
 - Comparison history: no browser comparison performed; visual fidelity is unverified. Build results are reported separately and do not establish visual QA.
 - Latest iteration: tabs moved inside the preview; caption moved alongside the code overlay directly below the main window. Added decorative animated canvas connections with pause, offscreen/document-visibility suspension, and reduced-motion support. These changes have not been visually reviewed in a browser.
 - Mobile density iteration: shortened introduction, omitted redundant discipline/industry labels, and added a compact tab-specific overview with Explore demo disclosure. Full demo controls remain available on expansion; desktop presentation remains intact. Connections now anchor to measured window, badge, and code-panel edges.
+- Latest mobile reference supersedes that disclosure approach: a dedicated mobile-only connected concept card with Apps / Automate / AI tabs, product logos, miniature workspace, footer arrow, and pagination. Mobile typography and copy match the new reference's centered composition; desktop showcase remains unchanged. Browser-rendered comparison remains unavailable.
 - final result: blocked
 - Blocker: browser-rendered desktop/mobile capture and comparison with the supplied reference are unavailable in this session.

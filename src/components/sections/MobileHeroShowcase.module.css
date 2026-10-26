@@ -1,0 +1,40 @@
+.showcase { display: none; }
+@media(max-width:599px) {
+  .showcase { display: block; width: 100%; max-width: 420px; margin-inline: auto; }
+  .card { border: 1px solid var(--border); border-radius: 19px; background: #fdfefb; box-shadow: 0 14px 34px -27px #244c3c40; overflow: hidden; }
+  .tabs { display: grid; grid-template-columns: 1fr 1.2fr .8fr; gap: 4px; padding: 10px 10px 7px; }
+  .tabs button { display: flex; justify-content: center; align-items: center; gap: 7px; min-height: 44px; border: 0; border-radius: 12px; padding: 9px 6px; background: transparent; color: var(--secondary); font-size: 12px; transition: background .2s,color .2s; }
+  .tabs button[aria-selected='true'] { background: #e7f1e9; color: #234f40; font-weight: 550; }
+  .tabs button:hover { background: #edf5ed; }
+  .scene { position: relative; margin: 0 10px 10px; aspect-ratio: 320 / 200; background: #f0f6f0; border-radius: 14px; }
+  .connections { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .product { position: absolute; display: grid; place-items: center; width: 16%; aspect-ratio: 1; border: 1px solid #e4ede4; border-radius: 50%; background: #fff; box-shadow: 0 9px 19px -14px #244c3c45; }
+  .left { left: 0; top: 33%; }
+  .right { right: 0; top: 40%; }
+  .product img { width: 60%; height: 60%; }
+  .miniWindow { position: absolute; left: 28%; top: 13%; width: 44%; height: 75%; border: 1px solid #d4e3d7; border-radius: 10px; background: #fff; box-shadow: 0 8px 20px -17px #234f4050; overflow: hidden; }
+  .chrome { display: flex; align-items: center; gap: 4px; height: 24px; padding: 0 9px; background: #f6f9f5; border-bottom: 1px solid #e7eee7; }
+  .chrome > span { width: 5px; height: 5px; border-radius: 50%; background: #d77e70; }
+  .chrome > span:nth-child(2) { background: #ddb968; }
+  .chrome > span:nth-child(3) { background: #78a88a; }
+  .chrome small { margin-left: auto; color: #74877a; font: 7px var(--font-body),sans-serif; }
+  .miniBody { display: flex; height: calc(100% - 24px); }
+  .miniRail { display: flex; flex-direction: column; align-items: center; gap: 13px; flex-shrink: 0; width: 25px; padding-top: 12px; background: #f6f9f5; color: #73917d; }
+  .miniRail > svg:first-child { color: #234f40; }
+  .miniContent { display: flex; flex-direction: column; justify-content: center; gap: 7px; padding: 9px 7px; min-width: 0; flex: 1; }
+  .miniContent strong { color: #254d3a; font-size: 9px; line-height: 1.4; font-weight: 600; }
+  .miniContent > span { display: block; padding: 5px; color: #627e69; background: #eaf2e9; font-size: 7px; line-height: 1.4; border-radius: 3px; }
+  .miniContent > b { display: inline-flex; align-items: center; gap: 3px; align-self: flex-start; padding: 4px; background: #234f40; color: white; border-radius: 4px; font-size: 7px; line-height: 1.4; font-weight: 400; }
+  .footer { display: flex; align-items: center; justify-content: space-between; min-height: 64px; gap: 12px; padding: 9px 14px; border-top: 1px solid var(--border); }
+  .footer p { font: 550 20px/1.3 var(--font-display),sans-serif; letter-spacing: -.04em; color: var(--ink); }
+  .footer button { display: grid; place-items: center; width: 44px; height: 44px; flex-shrink: 0; border: 0; border-radius: 50%; background: #234f40; color: #fff; transition: background .2s; }
+  .footer button:hover { background: #386e54; }
+  .pagination { display: flex; justify-content: center; gap: 0; margin-top: 4px; }
+  .pagination button { display: grid; place-items: center; width: 32px; min-height: 44px; border: 0; background: transparent; border-radius: 10px; }
+  .pagination span { width: 7px; height: 7px; border-radius: 50%; background: #cbd6cf; transition: background .2s; }
+  .pagination button[aria-pressed='true'] span { background: #234f40; }
+  .hint { text-align: center; color: #7c8f84; font-size: 11px; line-height: 1.5; margin-top: -4px; }
+  .signature { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 16px; font-size: 9px; line-height: 1.6; letter-spacing: .15em; text-transform: uppercase; color: #71897c; }
+  .signature:before { content: ''; width: 22px; height: 1px; background: #b4c4b8; }
+}
+@media(prefers-reduced-motion:reduce) { .showcase * { transition: none !important; } }
