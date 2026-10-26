@@ -9,5 +9,7 @@
 - Deliberate differences: no city/location, scroll prompt, avatar, or repeated toolkit grid, following the user's previous instructions. Mobile has centered copy, compact tabs, readable stacked controls, and an inline technical caption.
 - Browser evidence: unavailable. CUA inventory returned no enabled apps or browsers. No implementation screenshot, viewport comparison, interaction execution, or browser-console review could be captured.
 - Comparison history: no browser comparison performed; visual fidelity is unverified. Build results are reported separately and do not establish visual QA.
+- Latest iteration: tabs moved inside the preview; caption moved alongside the code overlay directly below the main window. Added decorative animated canvas connections with pause, offscreen/document-visibility suspension, and reduced-motion support. These changes have not been visually reviewed in a browser.
+- Mobile density iteration: shortened introduction, omitted redundant discipline/industry labels, and added a compact tab-specific overview with Explore demo disclosure. Full demo controls remain available on expansion; desktop presentation remains intact. Connections now anchor to measured window, badge, and code-panel edges.
 - final result: blocked
 - Blocker: browser-rendered desktop/mobile capture and comparison with the supplied reference are unavailable in this session.

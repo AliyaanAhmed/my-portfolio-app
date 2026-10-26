@@ -2,8 +2,9 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
-import { AppWindow, ArrowRight, Check, CheckCheck, ChevronRight, Code2, Database, FileText, Home, Layers, LayoutGrid, Network, Play, RotateCcw, ShieldCheck, Sparkles } from 'lucide-react';
+import { AppWindow, ArrowRight, Check, CheckCheck, ChevronRight, Code2, Database, FileText, Home, Layers, LayoutGrid, Network, Pause, Play, RotateCcw, ShieldCheck, Sparkles } from 'lucide-react';
 import { ProductLogo } from '@/components/ui/ProductLogo';
+import { HeroConnections } from './HeroConnections';
 import s from './HeroShowcase.module.css';
 
 const views = [
@@ -26,7 +27,12 @@ export function HeroShowcase() {
   const [running, setRunning] = useState(false);
   const [analyzed, setAnalyzed] = useState(false);
   const [analyzing, setAnalyzing] = useState(false);
+  const [connectionsPaused, setConnectionsPaused] = useState(false);
+  const [mobileExpanded, setMobileExpanded] = useState(false);
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
+  const windowRef = useRef<HTMLDivElement>(null);
+  const badgeRef = useRef<HTMLDivElement>(null);
+  const codeRef = useRef<HTMLDivElement>(null);
   const current = views[active];
 
   useEffect(() => {
@@ -49,7 +55,10 @@ export function HeroShowcase() {
   }
 
   return <motion.div className={s.showcase} initial={reduced ? false : { opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, delay: .12 }}>
-    <div className={s.heading}><p><span aria-hidden="true" />Explore the possibilities</p><h2>One idea. Many possibilities.</h2></div>
+    <div className={s.stage}>
+      <HeroConnections mode={active} paused={connectionsPaused} windowRef={windowRef} badgeRef={badgeRef} codeRef={codeRef} />
+      <div ref={windowRef} className={s.window} data-expanded={mobileExpanded}>
+        <div className={s.windowBar}><span className={s.windowDots} aria-hidden="true"><i /><i /><i /></span><span>{current.label} preview</span>{active === 0 && <span className={s.windowLogos} role="img" aria-label="Power Apps and React"><ProductLogo name="Power Apps" size={17} /><ProductLogo name="React" size={17} /></span>}<span className={s.example}>Interactive concept</span><button type="button" className={s.motionToggle} disabled={Boolean(reduced)} onClick={() => setConnectionsPaused(value => !value)} aria-label={connectionsPaused ? 'Play background connections' : 'Pause background connections'}>{connectionsPaused || reduced ? <Play size={12} /> : <Pause size={12} />}</button></div>
     <div className={s.tabs} role="tablist" aria-label="Explore application concepts">
       {views.map((view, index) => <button ref={element => { tabs.current[index] = element; }} key={view.label} type="button" role="tab" id={`hero-tab-${index}`} aria-controls="hero-showcase-panel" aria-selected={active === index} tabIndex={active === index ? 0 : -1} onClick={() => select(index)} onKeyDown={event => {
         let next = active;
@@ -61,12 +70,16 @@ export function HeroShowcase() {
         event.preventDefault(); select(next); tabs.current[next]?.focus();
       }}><view.icon size={16} /><span>{view.label}</span></button>)}
     </div>
-    <div className={s.stage}>
-      <div className={s.window} id="hero-showcase-panel" role="tabpanel" aria-labelledby={`hero-tab-${active}`} tabIndex={0}>
-        <div className={s.windowBar}><span className={s.windowDots} aria-hidden="true"><i /><i /><i /></span><span>{current.label} preview</span>{active === 0 && <span className={s.windowLogos} role="img" aria-label="Power Apps and React"><ProductLogo name="Power Apps" size={17} /><ProductLogo name="React" size={17} /></span>}<span className={s.example}>Interactive concept</span></div>
-        <div className={s.windowBody}>
+        <div className={s.windowBody} id="hero-showcase-panel" role="tabpanel" aria-labelledby={`hero-tab-${active}`} tabIndex={0}>
+          <div className={s.mobileSummary}>
+            <div className={s.summaryTitle}><current.icon size={21} /><h3>{current.title}</h3></div>
+            <div className={s.summarySteps} aria-label={`${current.label} overview`}>
+              {(active === 0 ? ['Apps', 'Connected data', 'AI'] : active === 1 ? ['Request', 'Review', 'Approve'] : ['Document', 'AI insight', 'Human review']).map((label, index) => <span key={label}>{index > 0 && <ArrowRight size={12} aria-hidden="true" />}<span>{label}</span></span>)}
+            </div>
+            <button type="button" className={s.expandDemo} aria-expanded={mobileExpanded} aria-controls="hero-demo-content" onClick={() => setMobileExpanded(value => !value)}>{mobileExpanded ? 'Close demo' : 'Explore demo'}<ChevronRight size={15} /></button>
+          </div>
           <div className={s.rail} aria-hidden="true"><span><Home size={17} /></span><Layers size={17} /><LayoutGrid size={17} /><Database size={17} /><ShieldCheck size={17} /></div>
-          <div className={s.canvas}>
+          <div className={s.canvas} id="hero-demo-content">
             {views.map((view, viewIndex) => <motion.div key={view.label} className={s.canvasPanel} data-active={active === viewIndex} inert={active !== viewIndex} aria-hidden={active !== viewIndex} initial={false} animate={{ opacity: active === viewIndex ? 1 : 0 }} transition={{ duration: reduced ? 0 : .2 }}>
                 <div className={s.canvasHeading}><h3>{view.title}</h3><p>{view.subtitle}</p></div>
                 {viewIndex === 0 && <div className={s.application}>
@@ -86,8 +99,8 @@ export function HeroShowcase() {
           </div>
         </div>
       </div>
-      <div className={s.productBadge}><div className={s.badgeLogos}>{active === 0 && <ProductLogo name="Power Apps" size={24} />}<ProductLogo name={current.product} size={24} /></div><span>{current.product === 'Azure Document Intelligence' ? 'Document Intelligence' : current.product === 'React' ? 'Power Apps + React' : current.product}</span></div>
-      <div className={s.codeCard}><div><Code2 size={14} /><span>{current.technology}</span><span className={s.codeLabel}>Example</span></div><pre><code>{current.code}</code></pre><span><i aria-hidden="true" />Built to connect.</span></div>
+      <div ref={badgeRef} className={s.productBadge}><div className={s.badgeLogos}>{active === 0 && <ProductLogo name="Power Apps" size={24} />}<ProductLogo name={current.product} size={24} /></div><span>{current.product === 'Azure Document Intelligence' ? 'Document Intelligence' : current.product === 'React' ? 'Power Apps + React' : current.product}</span></div>
+      <div ref={codeRef} className={s.codeCard}><div><Code2 size={14} /><span>{current.technology}</span><span className={s.codeLabel}>Example</span></div><pre><code>{current.code}</code></pre><span><i aria-hidden="true" />Built to connect.</span></div>
     </div>
     <div className={s.footer}><p>{current.caption}</p><button type="button" onClick={() => select((active + 1) % views.length)} aria-label={`Show ${views[(active + 1) % views.length].label} preview`}><ArrowRight size={18} /></button><span className={s.pagination} aria-live="polite"><b>0{active + 1}</b> / 03</span></div>
   </motion.div>;
