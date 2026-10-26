@@ -19,5 +19,5 @@ function getSiteUrl() {
   return url.origin;
 }
 export const siteUrl = getSiteUrl();
-export const navigation = [['Work','work'],['Expertise','expertise'],['Journey','journey'],['About','about'],['Contact','contact']] as const;
+export const navigation = [['Expertise','expertise'],['Work','work'],['Journey','journey'],['About','about'],['Contact','contact']] as const;
 export const education = [{ school: 'Salim Habib University', course: 'BS Computer Science', dates: 'September 2019–June 2023' }, { school: 'Institute of Business Administration', course: 'Diploma, Digital Marketing', dates: 'March 2024–September 2024' }];
